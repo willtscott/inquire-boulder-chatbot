@@ -4,5 +4,4 @@ inquire-boulder-requests-by-topic/.DS_Store
 inquire-boulder-faq-usage/.DS_Store
 inquire-boulder-faq/.DS_Store
 data/emails-to-boulder-city-council/Archived Council Emails.zip
-.ipynb_checkpoints/*
-notebooks/.ipynb_checkpoints/faq-text-checkpoint.ipynb
+notebooks/.ipynb_checkpoints/*
