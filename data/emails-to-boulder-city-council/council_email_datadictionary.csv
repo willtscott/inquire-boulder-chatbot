@@ -1,9 +1,0 @@
-Column Name,Description
-SentFrom,Display-name(s) of sender of email to Boulder City Council. Text is displayed in same way it is shown on email. 
-SentTo,"Display-name(s) of direct recipient(s) of email. In order to be included in this dataset, council@bouldercolorado.gov must be included in the SentTo and/or SentCC lines."
-SentCC,"Display-name(s) of copied recipient(s) of email. In order to be included in this dataset, council@bouldercolorado.gov must be included in the SentTo and/or SentCC lines."
-ReceivedDate,"Date the email was received. Reporting of council emails in this format began on August 1, 2018."
-EmailSubject,Text of email subject line.
-EmailBody,HTML version of body of email.
-PlainTextBody,Plain text version of body of email.
-MessageIdentifier,Unique identifier of email message.
