@@ -1,6 +1,6 @@
-inquire-boulder-chatbot
-==============================
+## inquire-boulder-chatbot
 https://willtscott.github.io/inquire-boulder-chatbot/
+==============================
 
 A chatbot for the Inquire Boulder FAQ
 
