@@ -1,20 +1,18 @@
 inquire-boulder-chatbot
 ==============================
-A chatbot for the Inquire Boulder FAQ
+A chatbot for the Inquire Boulder FAQ<br>
 https://willtscott.github.io/inquire-boulder-chatbot/
 
-
-
-Inquire Boulder:
+Inquire Boulder:<br>
 https://user.govoutreach.com/boulder/faq.php
 
-Boulder Open Data Portal:
+Boulder Open Data Portal:<br>
 https://bouldercolorado.gov/open-data/areas-of-inquiry
 
-Thanks to Nicolia Eldred-Skemp for help acquiring the Inquire Boulder FAQ text. 
-
-Related Projects:
+Related Projects:<br>
 https://github.com/doc1000/email_sorting
+
+Thanks to Nicolia Eldred-Skemp for help acquiring the Inquire Boulder FAQ text. 
 
 Project Organization
 ------------
