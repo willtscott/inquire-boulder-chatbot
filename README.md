@@ -1,9 +1,9 @@
 inquire-boulder-chatbot
 ==============================
+A chatbot for the Inquire Boulder FAQ
 https://willtscott.github.io/inquire-boulder-chatbot/
 
 
-A chatbot for the Inquire Boulder FAQ
 
 Inquire Boulder:
 https://user.govoutreach.com/boulder/faq.php
