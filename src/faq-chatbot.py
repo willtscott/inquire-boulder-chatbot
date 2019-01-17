@@ -5,8 +5,8 @@ print('\tHang on while I wake up...\n')
 import pandas as pd
 import spacy
 
-q_threshold = .8
-a_threshold = .5
+q_threshold = .9
+a_threshold = .6
 
 def max_sim(q, docs):
     """
