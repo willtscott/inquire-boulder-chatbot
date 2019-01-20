@@ -9,17 +9,18 @@
 - Improving the baseline: using better similarity measures, chatbot APIs etc and further experimentation
 - Wrapping up: code cleaning, documentation, possibly a blog post. Communication to City of Boulder team etc.
 
-**Tentative Timeline:**
-- Basics: Week 1
-- Strong baseline: Week 2-3
-- Web-service: Week 4
-- Improving the baseline: Week 5,6
-- Wrapping up: Week 7,8
+**Tentative Timeline (with rough dates):**
+- Basics: Week 1 (5/1-12/1)  
+- Strong baseline: Week 2-3 (13/1-27/1)  
+- Web-service: Week 4 (28/1-3/2)  
+- Improving the baseline: Week 5,6 (4/2-17/2)  
+- Wrapping up: Week 7,8 (18/2-5/3)  
+(can extend to request classification if time permits)
 
 **Useful Resources for different steps:**
 - Basics:  
     1. [Cookie cutter data science project](https://drivendata.github.io/cookiecutter-data-science/) - only as a reference for project organization. Not a strict template.  
-    2. Potential Python NLP Libraries to explore: NLTK, Spacy, Gensim Textacy, AllenNLP (preferably in that order, just to understand what are the different NLP functions they support)
+    2. Potential Python NLP Libraries to explore: NLTK, Spacy, Gensim, Textacy, AllenNLP (preferably in that order, just to understand what are the different NLP functions they support)
     3. Chatbot APIs (E.g., Microsoft's)
   
 - Strong baseline: 
