@@ -20,38 +20,55 @@ def max_sim(q, docs):
         if d.similarity(q) > max_s:
             max_s = d.similarity(q)
             max_i = i
-        if d.similarity(q) > .9:
-            print('\t', max_s, ': ', d)
+#         if d.similarity(q) > .9:
+#             print('\t', max_s, ': ', d)
     
     return max_i, max_s        
+
+def test_bot(row):
+    query = nlp(row.test_question.strip())
+
+    index, sim = max_sim(query, q_docs)
+
+    row['guess'] = str(sim) + ': ' + str(q_docs[index])
+    row['info'] = a_docs[index]
+    
+    print(row.test_question)
+    print('----')
+    print(row.guess)
+    print('\n\n')
     
 if __name__ == '__main__':    
     # Read in FAQ data to spaCy documents
     nlp = spacy.load('en_core_web_md')  # make sure to use larger model!
     faq = pd.read_csv('../data/interim/faq-text-separated.csv', keep_default_na=False)
+    test = pd.read_csv('../data/interim/test-questions.csv', keep_default_na=False)
+    
     q_docs = [nlp(entry) for entry in faq.question]
     a_docs = [nlp(entry) for entry in faq.answer]
     
-    query = nlp(input('\tAsk me a question about Boulder!\n').strip())
+    test.apply(test_bot, axis=1)
+    
+#     query = nlp(input('\tAsk me a question about Boulder!\n').strip())
 
-    while query.text != 'bye':        
-        print('\tLet me look this up...\n')
+#     while query.text != 'bye':        
+#         print('\tLet me look this up...\n')
 
-        index, sim = max_sim(query, q_docs)
+#         index, sim = max_sim(query, q_docs)
 
-        print('\tHighest Similarity Value: ', sim, '\n')
+#         print('\tHighest Similarity Value: ', sim, '\n')
         
-        if sim < q_threshold:
-            index, sim = max_sim(query, a_docs)
+#         if sim < q_threshold:
+#             index, sim = max_sim(query, a_docs)
             
-        if sim < a_threshold:
-            print("\tMy apologies, I can't find a good answer for that.")
-        else:
-            print('\t', str(q_docs[index]).strip(), '\n')
-            print('\t', str(a_docs[index]).strip(), '\n')
+#         if sim < a_threshold:
+#             print("\tMy apologies, I can't find a good answer for that.")
+#         else:
+#             print('\t', str(q_docs[index]).strip(), '\n')
+#             print('\t', str(a_docs[index]).strip(), '\n')
         
         
-        query = nlp(input('\tAsk me another!\n').strip())
-    else:
-        print('\tBye for now!')
+#         query = nlp(input('\tAsk me another!\n').strip())
+#     else:
+#         print('\tBye for now!')
         
