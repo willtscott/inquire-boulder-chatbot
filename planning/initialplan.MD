@@ -1,6 +1,6 @@
 ## Project Plan
 
-**Project duration:** Jan 5 - March 5 2018  
+**Project duration:** Jan 5 - March 5 2019  
 
 **General steps:**
 - Basics: Project setup, Getting to know the data set, NLP libraries, chatbot APIs etc.
@@ -25,6 +25,8 @@
   
 - Strong baseline: 
     1. Ideas to understand: Cosine similarity, Semantic similarity, Nearest neighbors 
+    2. Explore: Spacy's cosine/semantic similarity and how it is useful for our project. Implementing a nearest neighbor search based on cosine similartiy
+    3. Setting up a test set to evaluate against
 
 - Web service:
     1. Python libraries: Flask, Bottle, Django etc (There are many. I vote for Flask, but it is good to know about one or two other options, just in case some interview question comes up)
@@ -33,6 +35,7 @@
     
  - Improving the baseline:
     1. Chatbot APIs, what functions do they provide, what they cannot do, where it fits our purpose (Can fill this later, as we know more)
+    2. Training own Doc2vec model using Gensim and comparing against other approaches tried so far. 
     
  - Wrapping up:
     1. Code organization, Linting the code (e.g., pylint library) etc (Will add relevant notes/guidelines later)
