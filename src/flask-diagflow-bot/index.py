@@ -10,6 +10,9 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import stop_words
 from sklearn.metrics.pairwise import cosine_similarity
+from nltk.stem import WordNetLemmatizer
+
+wordnet_lemmatizer = WordNetLemmatizer()
 
 from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
@@ -17,16 +20,21 @@ app = Flask(__name__)
 q_threshold = .9
 a_threshold = .6
 
+def lem(words):
+    """Returns list of lemmas from arugment list of words."""
+    lem_sentence=[]
+    for word in words:
+        lem_sentence.append(wordnet_lemmatizer.lemmatize(word))
+    return lem_sentence
+
 def text_process(mess):
     """Returns list of the cleaned text in argument mess, with stopwords, punctuation removed and tokens lemmatized."""
-    # Check characters to see if they are in punctuation
-    nopunc = [char if char not in string.punctuation else ' ' for char in mess]
-
-    # Join the characters again to form the string.
-    nopunc = ''.join(nopunc)
-    # Lemmatize???    
-    # Now just remove any stopwords
-    return [word.lower() for word in nopunc.split() if word.lower() not in stop_words.ENGLISH_STOP_WORDS]
+    clean = [char if char not in string.punctuation else ' ' for char in mess]
+    clean = ''.join(clean)
+    clean = [word.lower() for word in clean.split() if word.lower() not in stop_words.ENGLISH_STOP_WORDS] 
+    clean = lem(clean)
+    
+    return clean
 
 def max_sim_skl(tq):
     """Returns (index, similarity value) of string argument q's most similar match in FAQ, determined by cosine similarity."""
@@ -44,10 +52,6 @@ def max_sim_skl(tq):
 def match_query(tq):
     """Prints most similar match in FAQ to user query."""
     index, sim = max_sim_skl(tq)   
-
-    print('max_similarity:', round(sim, 2))
-    print('sim_question:', faq.question.iloc[index])
-    print('answer:', faq.answer.iloc[index])
     return faq.answer.iloc[index]
 
 @app.route('/respond/<q>')
