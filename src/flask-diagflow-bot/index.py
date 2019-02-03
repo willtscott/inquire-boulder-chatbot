@@ -55,14 +55,19 @@ def respond(q):
     a = match_query(q)
     return render_template('index.html', query = q, answer = a)
 
-@app.route('/prompt', methods = ['POST', 'GET'])
+@app.route('/dialog', methods = ['POST'])
+def dialog():
+    data = request.get_json(silent='True')
+    question = data['queryResult']['parameters']['question']
+    
+    
+
+
+@app.route('/prompt', methods = ['POST'])
 def prompt():
    if request.method == 'POST':
       que = request.form['qu']
-      return redirect(url_for('respond',q = que))
-   else:
-      que = request.args.get('qu')
-      return redirect(url_for('respond',q = que))    
+      return redirect(url_for('respond',q = que))  
     
 if __name__ == '__main__':    
     # Read in FAQ data 
