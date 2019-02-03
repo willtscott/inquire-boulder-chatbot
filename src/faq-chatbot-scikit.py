@@ -15,12 +15,7 @@ q_threshold = .9
 a_threshold = .6
 
 def text_process(mess):
-    """
-    Takes in a string of text, then performs the following:
-    1. Remove all punctuation
-    2. Remove all stopwords
-    3. Returns a list of the cleaned text
-    """
+    """Returns list of the cleaned text in argument mess, with stopwords, punctuation removed and tokens lemmatized."""
     # Check characters to see if they are in punctuation
     nopunc = [char if char not in string.punctuation else ' ' for char in mess]
 
@@ -31,10 +26,7 @@ def text_process(mess):
     return [word.lower() for word in nopunc.split() if word.lower() not in stop_words.ENGLISH_STOP_WORDS]
 
 def max_sim_skl(tq):
-    """
-    Take user query in form of TFIDF sparse matrix, find question that has the highest cosine similarity,
-    and return the associated answer from FAQ if the similarity is above threshold value.
-    """
+    """Returns (index, similarity value) of string argument q's most similar match in FAQ, determined by cosine similarity."""
     # Transform test question into BOW using BOW transformer (based on faq.question) 
     tq_bow = bow_transformer.transform([tq])
     # Transform test question's BOW into TFIDF
@@ -47,6 +39,7 @@ def max_sim_skl(tq):
     return max_i, max_s      
 
 def respond(row):
+    """Returns argument row with added columns to match questions in FAQ."""
     query = row.test_question.strip()
 
     index, sim = max_sim_skl(query)
@@ -58,11 +51,13 @@ def respond(row):
     return row   
 
 def test_bot():
+    """Apply set of test questions to similarity function and print results."""
     test = pd.read_csv('../data/interim/test-questions.csv')
     pred = test.apply(respond, axis=1) 
     pred.apply(print, axis=1)
     
 def user_query():
+    """Prints most similar match in FAQ to user query."""
     tq = input('\tAsk me something about Boulder.\n').strip()
     while(tq is not 'bye'):
         
