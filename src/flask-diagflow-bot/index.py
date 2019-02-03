@@ -11,10 +11,10 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import stop_words
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.stem import WordNetLemmatizer
+from flask import Flask, redirect, url_for, request, render_template
 
 wordnet_lemmatizer = WordNetLemmatizer()
 
-from flask import Flask, redirect, url_for, request, render_template
 app = Flask(__name__)
 
 q_threshold = .9
@@ -38,7 +38,7 @@ def text_process(mess):
 
 def max_sim_skl(tq):
     """Returns (index, similarity value) of string argument q's most similar match in FAQ, determined by cosine similarity."""
-    # Transform test question into BOW using BOW transformer (based on faq.question) 
+    # Transform test question into BOW using BOW transformer
     tq_bow = bow_transformer.transform([tq])
     # Transform test question's BOW into TFIDF
     tq_tfidf = tfidf_transformer.transform(tq_bow)
@@ -63,9 +63,13 @@ def respond(q):
 def dialog():
     data = request.get_json(silent='True')
     question = data['queryResult']['parameters']['question']
+    answer = match_query(question)
+    response = """
+        Question: {0}
+        Answer: {1}""".format(question, answer)
     
-    
-
+    reply = { "fulfillmentText": response, }
+    return jsonify(reply)
 
 @app.route('/prompt', methods = ['POST'])
 def prompt():
@@ -81,7 +85,7 @@ if __name__ == '__main__':
     
     corpus = faq.question + ' ' + faq.answer
     
-    # Create BOW tranformer based on faq.question
+    # Create BOW tranformer based on faq.question + faq.answer
     bow_transformer = CountVectorizer(analyzer=text_process).fit(corpus)
     # Tranform faq.question itself into BOW
     c_bow = bow_transformer.transform(corpus)
