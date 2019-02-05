@@ -14,6 +14,10 @@ https://github.com/doc1000/email_sorting
 
 Thanks to Nicolia Eldred-Skemp for help acquiring the Inquire Boulder FAQ text. 
 
+QnA Maker chatbot for Inquire Boulder
+<iframe src='https://webchat.botframework.com/embed/inquire-boulder-faq?s=K2GKDgFUiQI.cwA.2t4.AnAFP_nPafG7hHGRjVLMOBHh8PtuztseJCCyTEGxKrg' style='min-width: 400px; width: 50%; min-height: 500px; align: middle;'></iframe>
+
+
 Project Organization
 ------------
 
