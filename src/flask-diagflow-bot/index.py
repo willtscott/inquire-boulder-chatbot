@@ -7,7 +7,6 @@ import string
 import numpy as np
 import pandas as pd
 
-import pusher
 import json
 import dialogflow
 
@@ -76,55 +75,51 @@ c_tfidf = tfidf_transformer.transform(c_bow)
 
 @app.route('/')
 def index():
+    """This route at the home page renders the index.html template with blank variables."""
     return render_template('index.html', query = '', answer = '')
 
 @app.route('/dialog', methods = ['POST'])
 def dialog():
+    """This route uses the POST method to request user input, parses it according to json or form data, prints the locally-determined Dialogflow API intent, and returns a json response based on skl matching with the FAQ."""
     if request.is_json:
         req = request.get_json(force=True)
-        question = req.get('queryResult').get('queryText')
-        answer = match_query(question)
-        message = answer
+        message = req.get('queryResult').get('queryText')
+        print('*' * 20)
     else:
-        message = 'not json'
-#     response = """
-#         Question: {0}
-#         Answer: {1}""".format(question, answer)
-#     reply = { "fulfillmentText": response, }
-#     return jsonify(reply)
-    return jsonify({
-        "fulfillmentText": message,
-        "fulfillmentMessages": [
-        {
-          "text": {
-            "text": [message]
-          }
-        }
-        ],
-        "source": "<Text response>"
-        })
+        message = request.form['message']
+    
+    project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
+    fulfillment_text = detect_intent_texts(project_id, "unique", message, 'en')
+    
+    response_text = match_query(message)
+    print("LOCAL_MATCH: " + response_text)
+    
+    if request.is_json:
+        return jsonify({
+            "fulfillmentText": response_text,
+            "fulfillmentMessages": [
+            {
+              "text": {
+                "text": [response_text]
+              }
+            }
+            ],
+            "source": "<Text response>"
+            })
+    else:
+        return render_template('index.html', query = message, answer = response_text)
 
-# API Example
-def detect_intent_texts(project_id, session_id, texts, language_code):
-    """Returns the result of detect intent with texts as inputs.
-
-    Using the same `session_id` between requests allows continuation
-    of the conversation."""
-    import dialogflow_v2 as dialogflow
+def detect_intent_texts(project_id, session_id, text, language_code):
+    """Given parameters of the Dialogflow project ID, session ID, user entry text, and language code ('en' for English), returns a fulfillment text based on detected intent from Dialogflow API."""
     session_client = dialogflow.SessionsClient()
-
     session = session_client.session_path(project_id, session_id)
-    print('Session path: {}\n'.format(session))
 
-    for text in texts:
+    if text:
         text_input = dialogflow.types.TextInput(
             text=text, language_code=language_code)
-
         query_input = dialogflow.types.QueryInput(text=text_input)
-
         response = session_client.detect_intent(
             session=session, query_input=query_input)
-
         print('=' * 20)
         print('Query text: {}'.format(response.query_result.query_text))
         print('Detected intent: {} (confidence: {})\n'.format(
@@ -132,6 +127,8 @@ def detect_intent_texts(project_id, session_id, texts, language_code):
             response.query_result.intent_detection_confidence))
         print('Fulfillment text: {}\n'.format(
             response.query_result.fulfillment_text))
+
+        return response.query_result.fulfillment_text
     
 if __name__ == '__main__':    
     app.run(debug = True)

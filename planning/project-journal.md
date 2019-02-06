@@ -38,4 +38,7 @@
 ## Web-Service Cont.
 * Worked on resume, resume templates...
 * Connecting flask/ngrok/local NLP with Dialogflow - figured out correct request/JSON formats for fulfillment responses.
+* Added QnA Maker and Dialogflow bots to [Github project page.](https://willtscott.github.io/inquire-boulder-chatbot/)
+* Looked into using Dialogflow API instead of fulfillments. Google Firebase may be the missing link?
+* Realized that '$ flask run' was better than '$ python XXXX/index.py', with code restructuring.
 * 
