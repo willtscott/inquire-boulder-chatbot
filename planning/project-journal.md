@@ -41,4 +41,21 @@
 * Added QnA Maker and Dialogflow bots to [Github project page.](https://willtscott.github.io/inquire-boulder-chatbot/)
 * Looked into using Dialogflow API instead of fulfillments. Google Firebase may be the missing link?
 * Realized that '$ flask run' was better than '$ python XXXX/index.py', with code restructuring.
-* 
+* Summary of different Flask configurations: 
+    1. All Local Option: Flask runs a localhost server that renders index.html template at '/', routes to '/dialog' after form submission, where dialog() func takes form data, matches with FAQ, and displays answer in browser.
+        *** Dialogflow is aware of queries made this way and puts them in History in Console. How???
+    2. Public Internet Option: Ngrok runs a public internet page to my localhost where anyone can access the form submission or /dialog page. Dialogflow uses the /dialog page to send a webhook request json and receive a response json to/from my local python program.
+        A. Dialogflow fulfillment webhooks
+        B. Dialogflow API
+    3. Cloud Service Option: Use Docker image with all requirements and project code to run chat bot as web service with no local component. 
+* Gensim Doc2Vec: Completed initial tutorial to apply to FAQ
+* Docker image on Google Cloud
+* Dialogflow API without web console
+
+Plan:
+a) continue working on dialogflow, flask, and interfacing with google cloud
+b) train a doc2vec model on answers - test by giving questions.
+c) train a doc2vec model on q&a - test by giving questions.
+- compare with all previous approaches you tried, on the test set.
+d) be able to explain what is doc2vec, and how is it useful here, what is the difference between KNN and Doc2vec.
+e) what other scenarios are use cases for doc2vec based modeling approach?
