@@ -36,11 +36,25 @@
 
 # Week 5
 ## Web-Service Cont.
+Plan:
+    a) continue working on dialogflow, flask, and interfacing with google cloud
+    b) train a doc2vec model on answers - test by giving questions.
+    c) train a doc2vec model on q&a - test by giving questions.
+        - compare with all previous approaches you tried, on the test set.
+    d) be able to explain 
+        * what is doc2vec? 
+            - An extension of the word2vec algorithm to sentences/paragraphs/documents that adds a unique document vector to the collection of word vectors and is trained simultaneously as the word vectors, resulting in a numeric representation of the document.
+        * how is it useful here? 
+            - I believe it will help differentiate between documents with similar words arranged in different orders. Doc2Vec saves memory by representing documents as a single vector rather than a collection of vectors for each of its words. This creates a dense matrix instead of sparse ones. 
+        * what is the difference between KNN and Doc2vec? 
+            - In Doc2Vec the model is trained on words' proximity to each other which helps recognize context.
+    e) what other scenarios are use cases for doc2vec based modeling approach?
+        * 
+
 * Worked on resume, resume templates...
 * Connecting flask/ngrok/local NLP with Dialogflow - figured out correct request/JSON formats for fulfillment responses.
 * Added QnA Maker and Dialogflow bots to [Github project page.](https://willtscott.github.io/inquire-boulder-chatbot/)
 * Looked into using Dialogflow API instead of fulfillments. Google Firebase may be the missing link?
-* Realized that '$ flask run' was better than '$ python XXXX/index.py', with code restructuring.
 * Summary of different Flask configurations: 
     1. All Local Option: Flask runs a localhost server that renders index.html template at '/', routes to '/dialog' after form submission, where dialog() func takes form data, matches with FAQ, and displays answer in browser.
         *** Dialogflow is aware of queries made this way and puts them in History in Console. How???
@@ -48,14 +62,7 @@
         A. Dialogflow fulfillment webhooks
         B. Dialogflow API
     3. Cloud Service Option: Use Docker image with all requirements and project code to run chat bot as web service with no local component. 
-* Gensim Doc2Vec: Completed initial tutorial to apply to FAQ
+* Gensim Doc2Vec: Completed initial tutorial to apply to FAQ. Completed second tutorial.
 * Docker image on Google Cloud
 * Dialogflow API without web console
 
-Plan:
-a) continue working on dialogflow, flask, and interfacing with google cloud
-b) train a doc2vec model on answers - test by giving questions.
-c) train a doc2vec model on q&a - test by giving questions.
-- compare with all previous approaches you tried, on the test set.
-d) be able to explain what is doc2vec, and how is it useful here, what is the difference between KNN and Doc2vec.
-e) what other scenarios are use cases for doc2vec based modeling approach?
