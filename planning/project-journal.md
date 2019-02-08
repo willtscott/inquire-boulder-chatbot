@@ -63,6 +63,9 @@ Plan:
         B. Dialogflow API
     3. Cloud Service Option: Use Docker image with all requirements and project code to run chat bot as web service with no local component. 
 * Gensim Doc2Vec: Completed initial tutorial to apply to FAQ. Completed second tutorial.
+* Built basic homemade gridsearch to test different parameters and differences b/w no stemming/stemmming/lemmatization
+    - Initial results are not good; highest num of successess so far is 5, and even that model is not reliable
+To Do:
 * Docker image on Google Cloud
 * Dialogflow API without web console
 
