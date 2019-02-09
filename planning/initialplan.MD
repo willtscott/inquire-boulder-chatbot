@@ -1,6 +1,6 @@
 ## Project Plan
 
-**Project duration:** Jan 5 - March 5 2019  
+**Project duration:** Jan 5 - March 16 2019  
 
 **General steps:**
 - Basics: Project setup, Getting to know the data set, NLP libraries, chatbot APIs etc.
@@ -8,13 +8,15 @@
 - Web-service: Setting up a UI/Rest API building on the baseline, hosting on AWS/Google Cloud or wherever, Docker if needed. 
 - Improving the baseline: using better similarity measures, chatbot APIs etc and further experimentation
 - Wrapping up: code cleaning, documentation, possibly a blog post. Communication to City of Boulder team etc.
+- Quick classification experiment: classifying questions by their topic/department.
 
 **Tentative Timeline (with rough dates):**
 - Basics: Week 1 (5/1-12/1)  
 - Strong baseline: Week 2-3 (13/1-27/1)  
 - Web-service: Week 4 (28/1-3/2)  
 - Improving the baseline: Week 5,6 (4/2-17/2)  
-- Wrapping up: Week 7,8 (18/2-5/3)  
+- Classification: Week 7,8 (18/2-5/3
+- Wrapping up: Week 7,8 (6/3-16/3)  
 (can extend to request classification if time permits)
 
 **Useful Resources for different steps:**
@@ -37,6 +39,13 @@
     1. Chatbot APIs, what functions do they provide, what they cannot do, where it fits our purpose (Can fill this later, as we know more)
     2. Training own Doc2vec model using Gensim and comparing against other approaches tried so far. 
     
+ - Classification:  
+    1. Training and evaluating classifiers for question topic identification using the supervised dataset available.
+    2. Quickly demonstrating how it can be useful in conjunction with the chat bot.
+    
  - Wrapping up:
-    1. Code organization, Linting the code (e.g., pylint library) etc (Will add relevant notes/guidelines later)
+    1. Code re-organization, Linting the code (e.g., pylint library) etc (Will add relevant notes/guidelines later)  
+    2. Resume preparation  
+    3. Writing a blog post, making a presentation etc.  
+   
  
