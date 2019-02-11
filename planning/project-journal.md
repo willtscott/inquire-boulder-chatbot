@@ -35,7 +35,7 @@
 * Set up super-basic working browser chatbot with Flask and scikit-learn approach
 
 # Week 5
-## Web-Service Cont.
+## Web-Service Cont. and Doc2Vec
 Plan:
     a) continue working on dialogflow, flask, and interfacing with google cloud
     b) train a doc2vec model on answers - test by giving questions.
@@ -68,4 +68,15 @@ Plan:
 To Do:
 * Docker image on Google Cloud
 * Dialogflow API without web console
+
+# Week 6
+## Return to Web Service with Docker
+Day 1
+* Completed suggested Docker tutorials and learned basics
+* Began working on Docker container for chat bot
+* Worked on Hacker Rank, 1 hour
+* Worked on Resume, 1 hour
+Day 2
+* 
+
 
