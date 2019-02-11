@@ -6,19 +6,21 @@ import sys
 import string
 import numpy as np
 import pandas as pd
+
+import json
+import dialogflow
+
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import stop_words
 from sklearn.metrics.pairwise import cosine_similarity
 from nltk.stem import WordNetLemmatizer
-from flask import Flask, redirect, url_for, request, render_template
+
+from flask import Flask, redirect, url_for, request, render_template, jsonify
 
 wordnet_lemmatizer = WordNetLemmatizer()
 
 app = Flask(__name__)
-
-q_threshold = .9
-a_threshold = .6
 
 def lem(words):
     """Returns list of lemmas from arugment list of words."""
@@ -54,46 +56,80 @@ def match_query(tq):
     index, sim = max_sim_skl(tq)   
     return faq.answer.iloc[index]
 
-@app.route('/respond/<q>')
-def respond(q):
-    a = match_query(q)
-    return render_template('index.html', query = q, answer = a)
+# Read in FAQ data 
+path = os.path.dirname(os.path.abspath(__file__))
+
+faq = pd.read_csv(path + '/../../data/interim/faq-text-separated.csv', keep_default_na=False)
+
+corpus = faq.question + ' ' + faq.answer
+
+# Create BOW tranformer based on faq.question + faq.answer
+bow_transformer = CountVectorizer(analyzer=text_process).fit(corpus)
+# Tranform faq.question itself into BOW
+c_bow = bow_transformer.transform(corpus)
+
+# Create TFIDF transformer based on faq.question's BOW
+tfidf_transformer = TfidfTransformer().fit(c_bow)
+# Transform faq.question's BOW into TFIDF
+c_tfidf = tfidf_transformer.transform(c_bow)
+
+@app.route('/')
+def index():
+    """This route at the home page renders the index.html template with blank variables."""
+    return render_template('index.html', query = '', answer = '')
 
 @app.route('/dialog', methods = ['POST'])
 def dialog():
-    data = request.get_json(silent='True')
-    question = data['queryResult']['parameters']['question']
-    answer = match_query(question)
-    response = """
-        Question: {0}
-        Answer: {1}""".format(question, answer)
+    """This route uses the POST method to request user input, parses it according to json or form data, prints the locally-determined Dialogflow API intent, and returns a json response based on skl matching with the FAQ."""
+    if request.is_json:
+        req = request.get_json(force=True)
+        message = req.get('queryResult').get('queryText')
+        print('*' * 20)
+    else:
+        message = request.form['message']
     
-    reply = { "fulfillmentText": response, }
-    return jsonify(reply)
+    project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
+    fulfillment_text = detect_intent_texts(project_id, "unique", message, 'en')
+    
+    response_text = match_query(message)
+    print("LOCAL_MATCH: " + response_text)
+    
+    if request.is_json:
+        return jsonify({
+            "fulfillmentText": response_text,
+            "fulfillmentMessages": [
+            {
+              "text": {
+                "text": [response_text]
+              }
+            }
+            ],
+            "source": "<Text response>"
+            })
+    else:
+        return render_template('index.html', query = message, answer = response_text)
 
-@app.route('/prompt', methods = ['POST'])
-def prompt():
-   if request.method == 'POST':
-      que = request.form['qu']
-      return redirect(url_for('respond',q = que))  
+def detect_intent_texts(project_id, session_id, text, language_code):
+    """Given parameters of the Dialogflow project ID, session ID, user entry text, and language code ('en' for English), returns a fulfillment text based on detected intent from Dialogflow API."""
+    session_client = dialogflow.SessionsClient()
+    session = session_client.session_path(project_id, session_id)
+
+    if text:
+        text_input = dialogflow.types.TextInput(
+            text=text, language_code=language_code)
+        query_input = dialogflow.types.QueryInput(text=text_input)
+        response = session_client.detect_intent(
+            session=session, query_input=query_input)
+        print('=' * 20)
+        print('Query text: {}'.format(response.query_result.query_text))
+        print('Detected intent: {} (confidence: {})\n'.format(
+            response.query_result.intent.display_name,
+            response.query_result.intent_detection_confidence))
+        print('Fulfillment text: {}\n'.format(
+            response.query_result.fulfillment_text))
+
+        return response.query_result.fulfillment_text
     
 if __name__ == '__main__':    
-    # Read in FAQ data 
-    path = os.path.dirname(os.path.abspath(__file__))
-    
-    faq = pd.read_csv(path + '/../../data/interim/faq-text-separated.csv', keep_default_na=False)
-    
-    corpus = faq.question + ' ' + faq.answer
-    
-    # Create BOW tranformer based on faq.question + faq.answer
-    bow_transformer = CountVectorizer(analyzer=text_process).fit(corpus)
-    # Tranform faq.question itself into BOW
-    c_bow = bow_transformer.transform(corpus)
-
-    # Create TFIDF transformer based on faq.question's BOW
-    tfidf_transformer = TfidfTransformer().fit(c_bow)
-    # Transform faq.question's BOW into TFIDF
-    c_tfidf = tfidf_transformer.transform(c_bow)
-           
     app.run(debug = True)
     
