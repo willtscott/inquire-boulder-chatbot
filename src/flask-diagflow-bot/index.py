@@ -59,7 +59,7 @@ def match_query(tq):
 # Read in FAQ data 
 path = os.path.dirname(os.path.abspath(__file__))
 
-faq = pd.read_csv(path + '/../../data/interim/faq-text-separated.csv', keep_default_na=False)
+faq = pd.read_csv('faq-text-separated.csv', keep_default_na=False)
 
 corpus = faq.question + ' ' + faq.answer
 
@@ -131,5 +131,5 @@ def detect_intent_texts(project_id, session_id, text, language_code):
         return response.query_result.fulfillment_text
     
 if __name__ == '__main__':    
-    app.run(debug = True)
+    app.run(host='0.0.0.0', port=80, debug = True)
     

@@ -77,6 +77,15 @@ Day 1
 * Worked on Hacker Rank, 1 hour
 * Worked on Resume, 1 hour
 Day 2
-* 
+* Successfully built working Docker container and respository for flask-dialogflow-bot sample: 
+    - docker run -p 4000:80 willtscott/online-test:first
+    - localhost:4000
+* Following tutorial to serve app via Kubernetes cluster: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app 
+* Worked on Hacker Rank, 1 hr
+* Worked on Resume, many hours
+Day 3
+* Researched resume format and mistakes, updated resume a little. 
+* Ran sample Docker container->public repository->container cluster->deployed app->internet app->scaled app->new version
+* Ran flask-bot container->repository->cluster->deployed?->but no internet????
 
 
