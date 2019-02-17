@@ -87,5 +87,10 @@ Day 3
 * Researched resume format and mistakes, updated resume a little. 
 * Ran sample Docker container->public repository->container cluster->deployed app->internet app->scaled app->new version
 * Ran flask-bot container->repository->cluster->deployed?->but no internet????
-
-
+* Met with Jeremie to discuss resume, branding, and application strategies
+Day 4
+* Researching flask->docker->cloud->web pipeline to determine the path of least resistance and work out current issues.
+    - Continuing with this series to see it through: https://docs.docker.com/get-started/part6/
+        - No success. This tutorial doesnt use cloud services.
+    - This one didn't get me any closer: https://medium.com/analytics-vidhya/how-to-deploy-machine-learning-models-using-flask-docker-and-google-cloud-platform-gcp-6e7bf1b339d5
+* Decided I'm probably overthinking this for now and that I don't need the cluster->swarm steps as long as my container runs and deploys the app to the web.

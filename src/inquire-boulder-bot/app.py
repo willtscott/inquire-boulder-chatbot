@@ -131,5 +131,5 @@ def detect_intent_texts(project_id, session_id, text, language_code):
         return response.query_result.fulfillment_text
     
 if __name__ == '__main__':    
-    app.run(host='0.0.0.0', port=80, debug = True)
+    app.run()
     
