@@ -12,7 +12,7 @@ RUN pip install python-dotenv
 RUN python -m nltk.downloader wordnet
 
 # Make port 80 available to the world outside this container
-EXPOSE 5000
+EXPOSE 80
 
 # Run app.py when the container launches
-CMD ["python", "index.py"]
+CMD ["python", "app.py"]

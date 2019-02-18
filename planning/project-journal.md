@@ -37,19 +37,19 @@
 # Week 5
 ## Web-Service Cont. and Doc2Vec
 Plan:
-    a) continue working on dialogflow, flask, and interfacing with google cloud
-    b) train a doc2vec model on answers - test by giving questions.
-    c) train a doc2vec model on q&a - test by giving questions.
-        - compare with all previous approaches you tried, on the test set.
-    d) be able to explain 
-        * what is doc2vec? 
-            - An extension of the word2vec algorithm to sentences/paragraphs/documents that adds a unique document vector to the collection of word vectors and is trained simultaneously as the word vectors, resulting in a numeric representation of the document.
-        * how is it useful here? 
-            - The document vector provides a way to determine context of each word in the document. Doc2Vec also saves memory by representing documents as a single vector rather than a collection of vectors for each of its words. This creates a dense matrix instead of sparse ones. 
-        * what is the difference between KNN and Doc2vec? 
-            - In Doc2Vec the model is trained on words' inclusion with each other in the same document, which later recognizes when the words are used in the similar/different contexts.
-    e) what other scenarios are use cases for doc2vec based modeling approach?
-        * Web search, 
+a) continue working on dialogflow, flask, and interfacing with google cloud
+b) train a doc2vec model on answers - test by giving questions.
+c) train a doc2vec model on q&a - test by giving questions.
+    - compare with all previous approaches you tried, on the test set.
+d) be able to explain 
+    * what is doc2vec? 
+        - An extension of the word2vec algorithm to sentences/paragraphs/documents that adds a unique document vector to the collection of word vectors and is trained simultaneously as the word vectors, resulting in a numeric representation of the document.
+    * how is it useful here? 
+        - The document vector provides a way to determine context of each word in the document. Doc2Vec also saves memory by representing documents as a single vector rather than a collection of vectors for each of its words. This creates a dense matrix instead of sparse ones. 
+    * what is the difference between KNN and Doc2vec? 
+        - In Doc2Vec the model is trained on words' inclusion with each other in the same document, which later recognizes when the words are used in the similar/different contexts.
+e) what other scenarios are use cases for doc2vec based modeling approach?
+    * Web search, 
 
 * Worked on resume, resume templates...
 * Connecting flask/ngrok/local NLP with Dialogflow - figured out correct request/JSON formats for fulfillment responses.
@@ -94,3 +94,8 @@ Day 4
         - No success. This tutorial doesnt use cloud services.
     - This one didn't get me any closer: https://medium.com/analytics-vidhya/how-to-deploy-machine-learning-models-using-flask-docker-and-google-cloud-platform-gcp-6e7bf1b339d5
 * Decided I'm probably overthinking this for now and that I don't need the cluster->swarm steps as long as my container runs and deploys the app to the web.
+
+# Week 7
+## 
+Day 1
+* 
