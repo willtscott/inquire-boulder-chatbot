@@ -35,21 +35,21 @@
 * Set up super-basic working browser chatbot with Flask and scikit-learn approach
 
 # Week 5
-## Web-Service Cont.
+## Web-Service Cont. and Doc2Vec
 Plan:
-    a) continue working on dialogflow, flask, and interfacing with google cloud
-    b) train a doc2vec model on answers - test by giving questions.
-    c) train a doc2vec model on q&a - test by giving questions.
-        - compare with all previous approaches you tried, on the test set.
-    d) be able to explain 
-        * what is doc2vec? 
-            - An extension of the word2vec algorithm to sentences/paragraphs/documents that adds a unique document vector to the collection of word vectors and is trained simultaneously as the word vectors, resulting in a numeric representation of the document.
-        * how is it useful here? 
-            - The document vector provides a way to determine context of each word in the document. Doc2Vec also saves memory by representing documents as a single vector rather than a collection of vectors for each of its words. This creates a dense matrix instead of sparse ones. 
-        * what is the difference between KNN and Doc2vec? 
-            - In Doc2Vec the model is trained on words' inclusion with each other in the same document, which later recognizes when the words are used in the similar/different contexts.
-    e) what other scenarios are use cases for doc2vec based modeling approach?
-        * Web search, 
+a) continue working on dialogflow, flask, and interfacing with google cloud
+b) train a doc2vec model on answers - test by giving questions.
+c) train a doc2vec model on q&a - test by giving questions.
+    - compare with all previous approaches you tried, on the test set.
+d) be able to explain 
+    * what is doc2vec? 
+        - An extension of the word2vec algorithm to sentences/paragraphs/documents that adds a unique document vector to the collection of word vectors and is trained simultaneously as the word vectors, resulting in a numeric representation of the document.
+    * how is it useful here? 
+        - The document vector provides a way to determine context of each word in the document. Doc2Vec also saves memory by representing documents as a single vector rather than a collection of vectors for each of its words. This creates a dense matrix instead of sparse ones. 
+    * what is the difference between KNN and Doc2vec? 
+        - In Doc2Vec the model is trained on words' inclusion with each other in the same document, which later recognizes when the words are used in the similar/different contexts.
+e) what other scenarios are use cases for doc2vec based modeling approach?
+    * Web search, 
 
 * Worked on resume, resume templates...
 * Connecting flask/ngrok/local NLP with Dialogflow - figured out correct request/JSON formats for fulfillment responses.
@@ -69,3 +69,33 @@ To Do:
 * Docker image on Google Cloud
 * Dialogflow API without web console
 
+# Week 6
+## Return to Web Service with Docker
+Day 1
+* Completed suggested Docker tutorials and learned basics
+* Began working on Docker container for chat bot
+* Worked on Hacker Rank, 1 hour
+* Worked on Resume, 1 hour
+Day 2
+* Successfully built working Docker container and respository for flask-dialogflow-bot sample: 
+    - docker run -p 4000:80 willtscott/online-test:first
+    - localhost:4000
+* Following tutorial to serve app via Kubernetes cluster: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app 
+* Worked on Hacker Rank, 1 hr
+* Worked on Resume, many hours
+Day 3
+* Researched resume format and mistakes, updated resume a little. 
+* Ran sample Docker container->public repository->container cluster->deployed app->internet app->scaled app->new version
+* Ran flask-bot container->repository->cluster->deployed?->but no internet????
+* Met with Jeremie to discuss resume, branding, and application strategies
+Day 4
+* Researching flask->docker->cloud->web pipeline to determine the path of least resistance and work out current issues.
+    - Continuing with this series to see it through: https://docs.docker.com/get-started/part6/
+        - No success. This tutorial doesnt use cloud services.
+    - This one didn't get me any closer: https://medium.com/analytics-vidhya/how-to-deploy-machine-learning-models-using-flask-docker-and-google-cloud-platform-gcp-6e7bf1b339d5
+* Decided I'm probably overthinking this for now and that I don't need the cluster->swarm steps as long as my container runs and deploys the app to the web.
+
+# Week 7
+## 
+Day 1
+* 
