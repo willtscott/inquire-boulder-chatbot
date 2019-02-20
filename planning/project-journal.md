@@ -98,4 +98,26 @@ Day 4
 # Week 7
 ## 
 Day 1
-* 
+* Getting sample bot back online through Docker and GCP
+* Saw an interesting option in Docker Hub to link to Github account and rebuild container automatically on git push
+* If I use webhooks instead of Dialogflow API then I don't have to include API in app, reducing container size.
+* Is Dialogflow API key json file in Docker container visible to others? Container is public.
+* My web preview of the sample bot running on GCP through Docker only available to my google account. Needs simple deployment!
+* Several more tutorials later.... 
+    - I think this is all the parts I need: Python -> Flask -> Docker -> GCP App Engine 
+    - yaml file doesn't need to specify ports?    
+Day 2
+* Finally got the bot deployed!!! 
+    - Used this tutorial:https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+    - Used these commands:
+        docker run --rm -p 8080:8080 willtscott/inquire-boulder-bot:v1
+        gcloud config set compute/zone us-central1-b
+        gcloud container clusters create bot-cluster --num-nodes=3
+        kubectl run bot-web --image=willtscott/inquire-boulder-bot:v1 --port 8080
+        kubectl expose deployment bot-web --type=LoadBalancer --port 80 --target-port 8080
+        kubectl get service
+    - All ports are 8080. The previous issues must have had to do with the port defined in python, Docker, yaml file, and command line not matching. Possibly could be cleaned up further by removing port expose in Docker file and ports in yaml file.
+    - I believe yaml file is not currently used as I'm running and exposing the serice throught CL. Here's a link about how to use service files: https://medium.com/google-cloud/deploy-python-application-to-google-cloud-with-docker-and-kubernetes-db33ee9fbed3
+    - In the future I will probably need to add gunicorn instead of relying solely on flask
+    - Ideally, an App Engine address would be better, and maybe lots cheaper on resources.
+* What is the difference between using webhook or Dialogflow API? Both needed or just one?

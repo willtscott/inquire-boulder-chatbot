@@ -1,20 +1,19 @@
-version: "3"
-services:
-  web:
-    # replace username/repo:tag with your name and image details
-    image: willtscott/online-test:first
-    deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
-    ports:
-#       - containerPort: 8000
-      - "80:80"
-    networks:
-      - webnet
-networks:
-  webnet:
+# version: "3"
+# # entrypoint: gunicorn -b :$PORT --timeout 100 main:app
+# services:
+#   web:
+#     image: willtscott/inquire-boulder-bot:v1
+#     deploy:
+#       replicas: 5
+#       resources:
+#         limits:
+#           cpus: "0.1"
+#           memory: 50M
+#       restart_policy:
+#         condition: on-failure
+#     ports:
+#       - "8080:8080"
+#     networks:
+#       - webnet
+# networks:
+#   webnet:
