@@ -121,3 +121,9 @@ Day 2
     - In the future I will probably need to add gunicorn instead of relying solely on flask
     - Ideally, an App Engine address would be better, and maybe lots cheaper on resources.
 * What is the difference between using webhook or Dialogflow API? Both needed or just one?
+Day 3
+* Began cleaning and reorganizing Flask app
+    - Created text processing function library
+    - Created BotServer class library
+* Next step: Get Dialogflow webhooks working with GCP app server, or use API if possible
+    - Big question: How to decide whether to use Dialogflow knowledge base or custom ML?
