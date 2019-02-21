@@ -127,3 +127,8 @@ Day 3
     - Created BotServer class library
 * Next step: Get Dialogflow webhooks working with GCP app server, or use API if possible
     - Big question: How to decide whether to use Dialogflow knowledge base or custom ML?
+* Tested Dialogflow's default ML against test_questions
+    - Results: 4 successes 
+    - 256 characters is the max input length. Can I increase it?
+* Fixed a false validation in the test_questions set. 
+    - TODO: Rerun sandbox notebook to update accuracy tests!

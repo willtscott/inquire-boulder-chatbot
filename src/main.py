@@ -19,8 +19,8 @@ def dialog():
     return bot.bot_dialog(request)
 
 if __name__ == '__main__':  
-    """Default entrypoint creates Botserver object and runs Flask app."""
-    bot = BotServer('faq-text-separated.csv')
+    """Default Python entrypoint creates Botserver object and runs Flask app."""
+    bot = BotServer('data/faq-text-separated.csv')
     
 #   This is used when running locally only. When deploying to Google App
 #   Engine, a webserver process such as Gunicorn will serve the app. This
