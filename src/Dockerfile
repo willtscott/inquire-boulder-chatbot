@@ -12,11 +12,8 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip install python-dotenv
 RUN python -m nltk.downloader wordnet
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
-
-# Define environment variable
-ENV NAME World
+# Make port 8080 available to the world outside this container
+EXPOSE 8080
 
 # Run app.py when the container launches
-CMD ["python", "index.py"]
+CMD ["python", "main.py"]

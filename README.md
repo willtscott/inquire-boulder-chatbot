@@ -3,6 +3,22 @@ inquire-boulder-chatbot
 A chatbot for the Inquire Boulder FAQ<br>
 https://willtscott.github.io/inquire-boulder-chatbot/
 
+# Dialogflow sample 
+
+<iframe
+    allow="microphone;"
+    width="350"
+    height="430"
+    src="https://console.dialogflow.com/api-client/demo/embedded/fd95fdff-97f7-4f3a-8651-e8d4b3fbb88f">
+</iframe>
+
+# QnA Maker sample 
+
+<iframe 
+    src='https://webchat.botframework.com/embed/inquire-boulder-faq?s=K2GKDgFUiQI.cwA.2t4.AnAFP_nPafG7hHGRjVLMOBHh8PtuztseJCCyTEGxKrg' 
+    style='min-width: 400px; width: 50%; min-height: 500px; align: middle;'>
+</iframe>
+
 Inquire Boulder:<br>
 https://user.govoutreach.com/boulder/faq.php
 
@@ -14,18 +30,7 @@ https://github.com/doc1000/email_sorting
 
 Thanks to Nicolia Eldred-Skemp for help acquiring the Inquire Boulder FAQ text. 
 
-# QnA Maker chatbot 
 
-<iframe src='https://webchat.botframework.com/embed/inquire-boulder-faq?s=K2GKDgFUiQI.cwA.2t4.AnAFP_nPafG7hHGRjVLMOBHh8PtuztseJCCyTEGxKrg' style='min-width: 400px; width: 50%; min-height: 500px; align: middle;'></iframe>
-
-# Dialogflow chatbot 
-
-<iframe
-    allow="microphone;"
-    width="350"
-    height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/fd95fdff-97f7-4f3a-8651-e8d4b3fbb88f">
-</iframe>
 
 Project Organization
 ------------
