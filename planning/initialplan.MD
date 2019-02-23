@@ -16,7 +16,7 @@
 - Web-service: Week 4 (28/1-3/2)  
 - Improving the baseline: Week 5,6 (4/2-17/2)  
 - Dockerization, code clean up etc: Week 7,8 (18/2-5/3) (can extend to request classification if time permits)
-- Wrapping up: Week 9,10 (6/3-16/3) - brief documentation, couple of blog posts etc.  
+- Wrapping up: Week 9,10 (6/3-16/3) - brief documentation, couple of blog posts, resume review, interview prep etc.  
 
 **Useful Resources for different steps:**
 - Basics:  
