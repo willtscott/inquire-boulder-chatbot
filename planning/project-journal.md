@@ -96,7 +96,7 @@ Day 4
 * Decided I'm probably overthinking this for now and that I don't need the cluster->swarm steps as long as my container runs and deploys the app to the web.
 
 # Week 7
-## 
+## GCP and Project Cleanup 
 Day 1
 * Getting sample bot back online through Docker and GCP
 * Saw an interesting option in Docker Hub to link to Github account and rebuild container automatically on git push
@@ -110,12 +110,23 @@ Day 2
 * Finally got the bot deployed!!! 
     - Used this tutorial:https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
     - Used these commands:
+        ---set up---
+        docker build -t willtscott/inquire-boulder-bot:v1 .
+        docker push willtscott/inquire-boulder-bot:v1
         docker run --rm -p 8080:8080 willtscott/inquire-boulder-bot:v1
+        ---deploy---
         gcloud config set compute/zone us-central1-b
         gcloud container clusters create bot-cluster --num-nodes=3
         kubectl run bot-web --image=willtscott/inquire-boulder-bot:v1 --port 8080
         kubectl expose deployment bot-web --type=LoadBalancer --port 80 --target-port 8080
         kubectl get service
+        ---clean up---
+        kubectl delete deployment bot-web --namespace=default
+        kubectl delete service bot-web
+        gcloud container clusters delete bot-cluster 
+        docker image ls -a
+        docker image rm [IMAGE_ID]
+        *** Delete docker images ***
     - All ports are 8080. The previous issues must have had to do with the port defined in python, Docker, yaml file, and command line not matching. Possibly could be cleaned up further by removing port expose in Docker file and ports in yaml file.
     - I believe yaml file is not currently used as I'm running and exposing the serice throught CL. Here's a link about how to use service files: https://medium.com/google-cloud/deploy-python-application-to-google-cloud-with-docker-and-kubernetes-db33ee9fbed3
     - In the future I will probably need to add gunicorn instead of relying solely on flask
@@ -132,3 +143,30 @@ Day 3
     - 256 characters is the max input length. Can I increase it?
 * Fixed a false validation in the test_questions set. 
     - TODO: Rerun sandbox notebook to update accuracy tests!
+Day 4
+* Discovered error in flask app:
+    - Execution not working: 'main.py not found' (Fixed by turning off development mode, but why occured?)
+    - When successfully executed, google authentification is not working correctly
+* Turned off and deleted GCP services to save credit
+* Sent a follow-up email to careers@ada.support
+* Submitted early pull request
+Day 5
+* Working on flask bug
+# Week 8 
+## Debugging, Drafting Blog, Revising Resume
+Day 1
+* Discovered .flaskenv file with environmental variables had been lost in the cleanup. Reinstated from github, but is needed?
+    - This turned out to be the issue. 
+* Tried out theory that authentication was failing due to no connection b/w app and google, but ngrok version didn't work either, so this is probably not the problem. Best ngrok tutorial: https://www.pragnakalp.com/dialogflow-fulfillment-webhook-tutorial/
+* Found it! Lost the env var GOOGLE_APPLICATION_CREDENTIALS="[FULL_PATH]/Inquire-Boulder-FAQ-8ed88c62ebc8.json"
+    - How to set local path?
+    - Used Dockerfile ENV command to set env var with local path
+Day 2
+* Emailed Gordon Gibson, ML lead at Ada Toronto.
+Day 3
+* Worked on blog draft, decided to pursue descriptive narrative rather than instructional directions
+Day 4
+* Tested sample bot deployment on GCP again and it worked. Added a few more commands to the execution order to clean up.
+* Worked on blog draft.
+* Received email reply from Gordon Gibson, passing on hiring but offering to meet for lunch...in Toronto.
+    

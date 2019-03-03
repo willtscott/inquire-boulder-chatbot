@@ -12,6 +12,12 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip install python-dotenv
 RUN python -m nltk.downloader wordnet
 
+# Set environmental variables
+ENV FLASK_APP=main.py
+ENV FLASK_ENV=development
+ENV DIALOGFLOW_PROJECT_ID=inquire-boulder-faq
+ENV GOOGLE_APPLICATION_CREDENTIALS=Inquire-Boulder-FAQ-8ed88c62ebc8.json
+
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
