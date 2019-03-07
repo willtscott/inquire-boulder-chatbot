@@ -3,20 +3,14 @@ inquire-boulder-chatbot
 A chatbot for the Inquire Boulder FAQ<br>
 https://willtscott.github.io/inquire-boulder-chatbot/
 
-# Dialogflow sample 
+# Dialogflow Interface 
 
 <iframe
     allow="microphone;"
-    width="350"
+    width="500"
     height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/fd95fdff-97f7-4f3a-8651-e8d4b3fbb88f">
-</iframe>
-
-# QnA Maker sample 
-
-<iframe 
-    src='https://webchat.botframework.com/embed/inquire-boulder-faq?s=K2GKDgFUiQI.cwA.2t4.AnAFP_nPafG7hHGRjVLMOBHh8PtuztseJCCyTEGxKrg' 
-    style='min-width: 400px; width: 50%; min-height: 500px; align: middle;'>
+    style="padding: 50px;"
+    src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq">
 </iframe>
 
 Inquire Boulder:<br>
