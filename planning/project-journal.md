@@ -187,3 +187,8 @@ Day 3
 * Cranked Knowledge Results Preference in Dialogflow all the way up to ensure Boulder answers are preferred.
 * Updated project dataset with newer hand-cleaned version (added 19 questions.) Newly hand-cleaned set has potential to 
 * Applied to Prodigy Games: https://jobs.lever.co/prodigygame/74bb6b78-9f77-462f-bb87-a18d0e2de031
+Day 4
+* Worked on Hacker Rank for a bit.
+* Worked on blog post.
+Day 5
+* Finished up blog draft.
