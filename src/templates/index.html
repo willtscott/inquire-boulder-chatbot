@@ -2,17 +2,17 @@
 
 <html>
     <body>
-        <form action = "/dialog" method = "post">
-            <p align='left'>
-                <h3>User</h3>
-                <input type = "text" name = "message" value = "{{ query }}"/>
-
-            </p>
-            <p align='left'><input type = "submit" value = "submit" /></p>
-        </form>
-        <p align='right'>
-            <h3 align='right'>Bot</h3>
-            {{ answer }}
+        <p align='left'>
+            <h3>User</h3>        
+            <form action = "/dialog" method = "post">
+                <input type = "text" name = "message" value = ""/>
+                <input type = "submit" value = "submit" />
+            </form>
+            {{ query }}
         </p>
+        <p align='left'>
+            <h3 align='left'>Bot</h3>
+            {{ answer }}
+        </p>    
     </body>
 </html>

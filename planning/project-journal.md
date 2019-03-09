@@ -57,7 +57,7 @@ e) what other scenarios are use cases for doc2vec based modeling approach?
 * Looked into using Dialogflow API instead of fulfillments. Google Firebase may be the missing link?
 * Summary of different Flask configurations: 
     1. All Local Option: Flask runs a localhost server that renders index.html template at '/', routes to '/dialog' after form submission, where dialog() func takes form data, matches with FAQ, and displays answer in browser.
-        *** Dialogflow is aware of queries made this way and puts them in History in Console. How???
+        *** Dialogflow is aware of queries made this way and puts them in History in Console. How? API.
     2. Public Internet Option: Ngrok runs a public internet page to my localhost where anyone can access the form submission or /dialog page. Dialogflow uses the /dialog page to send a webhook request json and receive a response json to/from my local python program.
         A. Dialogflow fulfillment webhooks
         B. Dialogflow API
@@ -116,10 +116,11 @@ Day 2
         docker run --rm -p 8080:8080 willtscott/inquire-boulder-bot:v1
         ---deploy---
         gcloud config set compute/zone us-central1-b
-        gcloud container clusters create bot-cluster --num-nodes=3
+        gcloud container clusters create bot-cluster --num-nodes=2
         kubectl run bot-web --image=willtscott/inquire-boulder-bot:v1 --port 8080
         kubectl expose deployment bot-web --type=LoadBalancer --port 80 --target-port 8080
         kubectl get service
+        *update webhook URL in Dialogflow Fulfilment section
         ---clean up---
         kubectl delete deployment bot-web --namespace=default
         kubectl delete service bot-web
@@ -168,5 +169,26 @@ Day 3
 Day 4
 * Tested sample bot deployment on GCP again and it worked. Added a few more commands to the execution order to clean up.
 * Worked on blog draft.
-* Received email reply from Gordon Gibson, passing on hiring but offering to meet for lunch...in Toronto.
-    
+* Received email reply from Gordon Gibson, passing on hiring but offering to meet for lunch in Toronto.
+Day 5
+* Worked on resume
+* Replied to Gordon's email - asked for feedback on application. 
+# Week 9
+##
+Day 1
+* Worked on resume
+* Applied to Backcountry with Cover Letter: http://jobs.jobvite.com/backcountry/job/oYIh9fwQ
+Day 2
+* Received feedback from Gordon Gibson of Ada, received recommendation to apply at Prodigy Games from Sowmya, asked Edouard if he has contacts there.
+* Tested Google Cloud service bot with Dialogflow webhook fulfillment - works! Just have to update webhook URL in Dialogflow Fulfilment section after deployment on Google Cloud.
+* Hand-cleaned data set through entry 165. There's quite a bit of incompatible content in here. Could be a biggish job for future maintenance.
+Day 3    
+* New job leads: Mozilla from Rocio Ng, Edouard knows someone at Prodigy Games....(Hassan)
+* Cranked Knowledge Results Preference in Dialogflow all the way up to ensure Boulder answers are preferred.
+* Updated project dataset with newer hand-cleaned version (added 19 questions.) Newly hand-cleaned set has potential to 
+* Applied to Prodigy Games: https://jobs.lever.co/prodigygame/74bb6b78-9f77-462f-bb87-a18d0e2de031
+Day 4
+* Worked on Hacker Rank for a bit.
+* Worked on blog post.
+Day 5
+* Finished up blog draft.

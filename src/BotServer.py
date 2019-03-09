@@ -17,6 +17,7 @@ from flask import Flask, redirect, url_for, request, render_template, jsonify
 
 class BotServer:
     def __init__(self, file_path):
+        """Initialize corpus, bag-of-words, and TFIDF from CSV file at argument file_path."""
         # Read in FAQ data 
         self.faq = pd.read_csv(file_path, keep_default_na=False)
         self.corpus = self.faq.question + ' ' + self.faq.answer
@@ -31,7 +32,7 @@ class BotServer:
         # Transform faq.question's BOW into TFIDF
         self.corpus_tfidf = self.tfidf_transformer.transform(self.corpus_bow)
 
-    def max_sim_skl(self, query):
+    def most_similar_sklearn(self, query):
         """Returns (index, similarity value) of string argument query's most similar match in FAQ, determined by cosine similarity."""
         # Transform test question into BOW using BOW transformer
         query_bow = self.bow_transformer.transform([query])
@@ -46,7 +47,7 @@ class BotServer:
 
     def match_query(self, query):
         """Prints most similar match in FAQ to user query."""
-        index, similarity = self.max_sim_skl(query)   
+        index, similarity = self.most_similar_sklearn(query)   
         return self.faq.answer.iloc[index]
 
     def detect_intent_texts(self, project_id, session_id, text, language_code):
@@ -71,16 +72,15 @@ class BotServer:
             return response.query_result.fulfillment_text
     
     def bot_dialog(self, request):
-        """Given the argument POST request, parse it according to json or form data, print the locally-determined Dialogflow API intent, and return a json response based on skl matching with the FAQ."""
+        """Given the argument POST request, parse it according to json or form data, print the locally-determined Dialogflow API intent, and return a json response based on sklearn matching with the FAQ."""
         if request.is_json:
             req = request.get_json(force=True)
             message = req.get('queryResult').get('queryText')
-            print('*' * 20)
         else:
             message = request.form['message']
 
-        project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
-        fulfillment_text = self.detect_intent_texts(project_id, "unique", message, 'en')
+#        project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
+#        fulfillment_text = self.detect_intent_texts(project_id, "unique", message, 'en')
 
         response_text = self.match_query(message)
         print("LOCAL_MATCH: " + response_text)
