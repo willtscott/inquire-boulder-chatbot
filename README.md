@@ -1,9 +1,6 @@
 inquire-boulder-chatbot
 ==============================
-A chatbot for the Inquire Boulder FAQ<br>
-https://willtscott.github.io/inquire-boulder-chatbot/
-
-# Dialogflow Interface 
+(A chatbot for the Inquire Boulder FAQ)[https://willtscott.github.io/inquire-boulder-chatbot/]
 
 <iframe
     allow="microphone;"
