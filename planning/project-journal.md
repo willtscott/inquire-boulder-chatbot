@@ -174,7 +174,7 @@ Day 5
 * Worked on resume
 * Replied to Gordon's email - asked for feedback on application. 
 # Week 9
-##
+## Applying, Interview Prep, Blog Post
 Day 1
 * Worked on resume
 * Applied to Backcountry with Cover Letter: http://jobs.jobvite.com/backcountry/job/oYIh9fwQ
@@ -192,3 +192,28 @@ Day 4
 * Worked on blog post.
 Day 5
 * Finished up blog draft.
+# Week 10
+## Blog Post, Interview Prep
+Day 1
+* Submitted blog post to Towards Data Science after adding pics and conclusion paragraph
+* Received resume advice from Ronnie
+Day 2
+* Blog post published by TDS!
+* Readme summary
+Day 3
+* Received email from Prodigy Games and scheduled call for 2:15 the next day.
+* Did Python and SQL practice
+* Redeployed bot on GCP to try to provide better responses to people checking it out through the blog post.
+Day 4
+* Python and SQL practice
+* Interview prep
+* Phone interview with Prodigy Games - OK, I think. Waiting on coding challenge.
+* Bot used ~$3 over 24hrs with a few queries from randos
+Day 5
+* Practiced SQL
+* Took Prodigy coding challenge 
+* Bot used about $3 more today
+* Realized that hand-cleaned dataset needs to be updated in Dialogflow KnowledgeBase as well
+
+
+
