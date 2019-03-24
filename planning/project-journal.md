@@ -215,5 +215,31 @@ Day 5
 * Bot used about $3 more today
 * Realized that hand-cleaned dataset needs to be updated in Dialogflow KnowledgeBase as well
 
-
-
+# Week 11
+Day 1
+* Applied Sphero and Penlink
+Day 2
+* Cleaning up sandbox and creating testing pipeline
+Day 3
+* Adding more testing to sandbox for mulitnomial naive-bayes - SmartRegs questions mishandled in dataset are breaking this.
+* Drafted cover letter for Simple Energy:
+    - Find Hiring Manager to address letter
+* Application ToDo list:
+    + Find advice on cold-contacting current employees
+    + / at end of URL on resume/letter?
+    - New photo on LinkedIn
+    - Links to Kaggle, Medium profiles, travelblog?
+    - Spiffy up github.io homepage 
+    - https://danielhunter.io/technical/2018/06/18/hired/
+* Applied Simple Energy position Software Engineer - Data
+Day 4
+* Cold-contacted a few folks
+* Received response from Simple Energy
+* Job-searched for Boulder area
+* 1 hr SQL
+* Added networking events/meetups
+Day 5
+* Seems that GCP services are costing a steady $3/day, that's about $1100/year.
+* Applied at Carbon Black
+* 1 hr SQL - finished SQLZOO tutorial
+* 
