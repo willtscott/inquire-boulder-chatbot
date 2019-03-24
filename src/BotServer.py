@@ -79,8 +79,8 @@ class BotServer:
         else:
             message = request.form['message']
 
-#        project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
-#        fulfillment_text = self.detect_intent_texts(project_id, "unique", message, 'en')
+        project_id = os.getenv('DIALOGFLOW_PROJECT_ID')
+        fulfillment_text = self.detect_intent_texts(project_id, "unique", message, 'en')
 
         response_text = self.match_query(message)
         print("LOCAL_MATCH: " + response_text)
