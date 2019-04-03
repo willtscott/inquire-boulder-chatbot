@@ -276,4 +276,6 @@ Day 6
 Day 1
 * Attended Databricks Unified Analytics workshop - Takeaway: Faster/Better than plain Spark w/ tools to bring engineering and ML together.
 * Contacted WilderAI
-
+* Updated test set with stripped strings and started experimenting with ngrams in CountVectorizer
+Day 2
+* 
