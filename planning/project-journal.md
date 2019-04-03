@@ -242,4 +242,40 @@ Day 5
 * Seems that GCP services are costing a steady $3/day, that's about $1100/year.
 * Applied at Carbon Black
 * 1 hr SQL - finished SQLZOO tutorial
+* Worked on bot accuracy: detect_intent function is failing due to authentication reasons. Eject API?
+
+# Week 12
+Day 1
+* Office hours: 
+    Should I apply to jr roles or shoot higher? Both
+    Contact WilderAI? done
+    Feedback from Prodigy? none
+    cold-contact senior members? both
+    Perhaps use averaged Word2Vec instead of TFIDF for chatbot...
+* Updated resume, post-roast
+* Applied to Voyant, cold-contacted 2 employees.
+* Worked on BVSD application
+Day 2
+* Cancelled lunch meeting w/ Penlink
+* Response from Voyant - meeting this week?
+* Received feedback from Beula at Prodigy - did great on coding challenge, but going with more experienced candidate. Keeping in touch.
+* 1 hr Python practice
+Day 3
+* Worked on BVSD application
+* Determined that Dialogflow API can indeed be eliminated currently
+Day 4
+* http://35.184.190.107/dialog
+* Finished hand-cleaning dataset up to entry 251 (end), although it is far from perfect for chatbot application.
+Day 5
+* Submitted BVSD application
+* Meeting w/ JJ of Voyant
+Day 6
+* Redefined q-n-a pair separation function and used new results to find errors in dataset, so revisited hand-cleaning.
+
+# Week 13
+Day 1
+* Attended Databricks Unified Analytics workshop - Takeaway: Faster/Better than plain Spark w/ tools to bring engineering and ML together.
+* Contacted WilderAI
+* Updated test set with stripped strings and started experimenting with ngrams in CountVectorizer
+Day 2
 * 
