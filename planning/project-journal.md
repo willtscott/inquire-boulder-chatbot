@@ -108,7 +108,7 @@ Day 1
     - yaml file doesn't need to specify ports?    
 Day 2
 * Finally got the bot deployed!!! 
-    - Used this tutorial:https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
+    - Used this tutorial: https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
     - Used these commands:
         ---set up---
         docker build -t willtscott/inquire-boulder-bot:v1 .
@@ -120,10 +120,15 @@ Day 2
         kubectl run bot-web --image=willtscott/inquire-boulder-bot:v1 --port 8080
         kubectl expose deployment bot-web --type=LoadBalancer --port 80 --target-port 8080
         kubectl get service
-        *update webhook URL in Dialogflow Fulfilment section
+        *update webhook URL in Dialogflow Fulfilment section + '/dialog'
+        ---deploy new version---
+        docker build -t willtscott/inquire-boulder-bot:v2 .
+        docker push willtscott/inquire-boulder-bot:v2
+        kubectl set image deployment/bot-web bot-web=willtscott/inquire-boulder-bot:v2
         ---clean up---
         kubectl delete deployment bot-web --namespace=default
         kubectl delete service bot-web
+        gcloud config set compute/zone us-central1-b
         gcloud container clusters delete bot-cluster 
         docker image ls -a
         docker image rm [IMAGE_ID]
@@ -264,7 +269,6 @@ Day 3
 * Worked on BVSD application
 * Determined that Dialogflow API can indeed be eliminated currently
 Day 4
-* http://35.184.190.107/dialog
 * Finished hand-cleaning dataset up to entry 251 (end), although it is far from perfect for chatbot application.
 Day 5
 * Submitted BVSD application
@@ -278,4 +282,14 @@ Day 1
 * Contacted WilderAI
 * Updated test set with stripped strings and started experimenting with ngrams in CountVectorizer
 Day 2
-* 
+* Meeting with PenLink, Data Detectives folks, and Analyze Boulder 
+* Job search and networking
+Day 3
+* Updating text processing notebooks into script sequence
+* Job search and networking followup to previous day's contacts
+Day 4
+* Follow-up with Carbon Black and Voyant
+* Continued updating of script sequence from processing notebook
+* GCP credit: $222.40 with 258 days remaining. Loss of $26 in last 10 days = $2.60/day
+* Successfully redeployed new version of bot, minus Dialogflow API, with new commands. Reset service running on one cluster.
+*

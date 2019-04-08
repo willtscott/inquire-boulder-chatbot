@@ -1,6 +1,5 @@
 Flask
 numpy
 pandas
-dialogflow
 sklearn
 nltk
