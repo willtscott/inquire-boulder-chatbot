@@ -11,7 +11,7 @@ def lem(words):
     return lem_sentence
 
 def text_process(mess):
-    """Returns list of the cleaned text in argument string mess, with stopwords, punctuation removed and tokens lemmatized."""
+    """Returns list of tokenized lemmas in argument string mess, with stopwords, punctuation removed."""
     clean = [char if char not in string.punctuation else ' ' for char in mess]
     clean = ''.join(clean)
     clean = [word.lower() for word in clean.split() if word.lower() not in stop_words.ENGLISH_STOP_WORDS] 

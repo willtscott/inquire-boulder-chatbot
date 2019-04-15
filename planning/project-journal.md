@@ -292,4 +292,36 @@ Day 4
 * Continued updating of script sequence from processing notebook
 * GCP credit: $222.40 with 258 days remaining. Loss of $26 in last 10 days = $2.60/day
 * Successfully redeployed new version of bot, minus Dialogflow API, with new commands. Reset service running on one cluster.
-*
+* Applied to IBM 
+Day 5
+* Attended BVSD job fair
+
+# Week 14 
+Day 1
+* Office Hours w/ SM
+* Call with Voyant, interview tomorrow!
+* Testing out IBM Watson integration - interface not friendly, but seems pretty powerful already.
+* Reached out to new IBM contact, JJ
+* GCP credit: $216.27 with 255 days remaining, averaging $6 over 3 days = $2/day = cheaper without Dialogflow API!?
+Day 2
+* Met with AC from Onehot Labs
+* Mock interview with AT from SM
+* Interview with Voyant - OK!?
+* Downloaded Word2Vec model pretrained on Google News
+* Boulder Python meetup about Spline models
+Day 3
+* Attended CWA talk about Effects of AI on Business and Labor
+* Attempted to run pretrained Word2Vec - model loading took 1hr17min...........
+* Attempting to check similarity in loaded model also overloaded processing
+Day 4
+* GCP credit at $211.70 with 253 days remaining. Loss of $11 in 5 days = $2+/day
+* Testing Word2Vec on custom trained model - works, but not great success (1/20)
+* Pretrained W2V took only 13 min this time.... - Using it still locks system. Researched W2V models on Kaggle.
+* Working on improving lemmas with POS and 
+Day 5
+* Applied Google x2, Section
+* SQL, Python practice
+* Implemented POS lemmas, alternate processing strategies, and custom count vectorizor in sandbox
+Day 6
+* Incorporated new functionality to test Topic matching on large proprietary set. 
+* Working on new automated evaluation scripts, classes.
