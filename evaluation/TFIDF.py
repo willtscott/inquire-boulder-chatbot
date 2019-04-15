@@ -12,8 +12,17 @@ sys.path.append('../src')
 import processing
 
 class TFIDF:
-    def __init__(self, faq_df, name=''):
-        self.name = 'TFIDF ' + name
+    name = ''
+    faq = '' 
+    features = ''
+    corpus = ''
+    bow_transformer = ''
+    tfidf_transformer = ''
+    corpus_tfidf = ''    
+    
+    def __init__(self, faq_df, label=''):
+        """Initialize TFIDF object with FAQ DataFrame and optional naming label, building corpus, vectorizer, and vectors."""
+        self.name = 'TFIDF ' + label
         self.faq = faq_df
         
         # Create corpus by joining columns
@@ -22,18 +31,23 @@ class TFIDF:
         for f in self.features:
             self.corpus += self.faq[f] + ' '
 
+        self.bow_transformer = ''
+        self.tfidf_transformer = ''
+        self.corpus_tfidf = self.vectorize()
+        
+        print('Built:', self.name)
+        
+    def vectorize(self):
+        """Returns vectors of transformed corpus, using Bag of Words and Term Frequency/Inverse Document Frequency."""
         # Create BOW tranformer based on faq.question + faq.answer
         self.bow_transformer = CountVectorizer(analyzer=processing.text_process).fit(self.corpus)
         # Tranform faq.question itself into BOW
-        self.corpus_bow = self.bow_transformer.transform(self.corpus)
+        corpus_bow = self.bow_transformer.transform(self.corpus)
 
         # Create TFIDF transformer based on faq.question's BOW
-        self.tfidf_transformer = TfidfTransformer().fit(self.corpus_bow)
-        # Transform faq.question's BOW into TFIDF
-        self.corpus_tfidf = self.tfidf_transformer.transform(self.corpus_bow)
-        
-        print('Built', self.name)
-
+        self.tfidf_transformer = TfidfTransformer().fit(corpus_bow)
+        # Transform faq.question's BOW into TFIDF and return    
+        return self.tfidf_transformer.transform(corpus_bow)
 
     def max_cosine_similarity(self, query):
         """Returns (index, similarity value) of string argument q's most similar match in FAQ, determined by cosine similarity."""
@@ -50,8 +64,7 @@ class TFIDF:
         return max_index, max_similarity
 
     def respond(self, row):
-        """Returns argument row with added columns to match questions in FAQ."""
-        """Returns argument row with added columns to match questions in FAQ."""
+        """Returns argument row with new columns added containing attempted match in FAQ."""
         query = row.test_question.strip()
 
         index, sim = self.max_cosine_similarity(query)
@@ -68,18 +81,21 @@ class TFIDF:
 #         row['info'] = faq.answer.iloc[index]    
         return row   
 
-    def evaluate(self, test):
+    def evaluate(self, test, label = ''):
+        """Given test DataFrame and optional naming label, evaluate and print match success rate, 
+        returning results DataFrame with column of True/False values for each question's match success."""
         results = pd.DataFrame()
+        eval_name = self.name + label
 
         t = test.apply(self.respond, axis=1)
         
         if 'topic_success' in t.columns:
-            results[self.name] = t.topic_success
+            results[eval_name] = t.topic_success
         elif 'question_success' in t.columns:
-            results[self.name] = t.question_success
+            results[eval_name] = t.question_success
         
-        print('Tested', self.name)        
-        print('  Successes: ', sum(results[self.name]), '/', len(results), '=', 
-              round(sum(results[self.name]) / len(results), 4) * 100, '%')
+        print('Tested:', eval_name)        
+        print('  Successes: ', sum(results[eval_name]), '/', len(results), '=', 
+              round(sum(results[eval_name]) / len(results), 4) * 100, '%')
 
         return results
