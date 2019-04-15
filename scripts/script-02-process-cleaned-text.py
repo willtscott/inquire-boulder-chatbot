@@ -33,7 +33,7 @@ def qna_pairs(row):
 
     # Treat heading as an answer to the question of 'Topic' column text
     if h:
-        qna = [[row.Topic, h.strip()]] + qna  
+        qna = [[row.Topic + '?', h.strip()]] + qna  
     
     if q:
         qna.append([q.strip(), a.strip()])
@@ -69,3 +69,11 @@ if __name__ == '__main__':
     
     # Write dataframe to file for Dialogflow Knowledgebase use, requiring only two columns, 'question' and 'answer'
     faq[['question', 'answer']].to_csv('../data/processed/faq-two-columns.csv', index=False)
+    
+    # Write two-column dataframe to Excel file for QNA Maker, Watson, etc.
+    # Create a Pandas Excel writer using XlsxWriter as the engine.
+    writer = pd.ExcelWriter('../data/processed/faq-two-columns.xlsx', engine='xlsxwriter')
+    # Convert the dataframe to an XlsxWriter Excel object.
+    faq[['question', 'answer']].to_excel(writer, sheet_name='faq-text-separated', index=False)
+    # Close the Pandas Excel writer and output the Excel file.
+    writer.save()
