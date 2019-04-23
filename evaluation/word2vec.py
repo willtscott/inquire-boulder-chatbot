@@ -72,7 +72,7 @@ if __name__ == '__main__':
     #Save the model
     our_model.save("../models/tempmodel.w2v")
     #Inspect the model by looking for the most similar words for a test word. 
-    # [print(x) for x in our_model.wv.most_similar('dogs', topn=5)]
+    [print(x) for x in our_model.wv.most_similar('dogs', topn=5)]
     
     corpus_vectors = embedding_feats(corpus)
     

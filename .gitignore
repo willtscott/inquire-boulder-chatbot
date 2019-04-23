@@ -87,3 +87,5 @@ target/
 data/raw/emails-to-boulder-city-council/Archived Council Emails.zip
 src/flask-diagflow-bot/Inquire-Boulder-FAQ-8ed88c62ebc8.json
 src/Inquire-Boulder-FAQ-8ed88c62ebc8.json
+models/tempmodel.w2v
+models/tempmodel.w2v
