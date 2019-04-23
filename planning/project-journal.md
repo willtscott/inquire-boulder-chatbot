@@ -325,3 +325,27 @@ Day 5
 Day 6
 * Incorporated new functionality to test Topic matching on large proprietary set. 
 * Working on new automated evaluation scripts, classes.
+
+# Week 15
+Day 1
+* Office Hours w/ SM 
+* Improving modularity of automated evaluation in the chatbot
+* Making/following up on connections
+* Job research - Keyvalues.com
+* Javascript practice
+Day 2
+* Watson practice (Assistant = lots of manual labor)
+Day 3 
+* Networking - Twitter and Uber are hiring
+* Idea: Split project into 2 repos, 1 offline for research and evaluation, 1 online working model 
+Day 4
+* Applications
+Day 5
+* Applications
+* Webinar - unwalled Medium article
+* Abstracted Evaluator base class, updated TFIDF class
+* Building word2vec class into auto evaluation - not getting same results as before (?)
+
+# Week 16
+Day 1
+
