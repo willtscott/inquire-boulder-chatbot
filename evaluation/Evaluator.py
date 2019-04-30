@@ -8,10 +8,10 @@ import processing
 
 class Evaluator:
     name = ''
-    faq = ''
-    features = ''
+    faq = pd.DataFrame()
+    features = []
     corpus = ''
-    vectors = ''
+    vectors = []
     
     def __init__(self, faq_df, feature_list, label=''):
         """Initialize object with FAQ DataFrame and optional naming label, building corpus, vectorizer, and vectors."""
@@ -60,6 +60,7 @@ class Evaluator:
 
         t = test_set.apply(self.respond, axis=1)
         
+        # Determine whether topics or questions are being evaluated
         if 'topic_success' in t.columns:
             results[eval_name] = t.topic_success
         elif 'question_success' in t.columns:
@@ -69,6 +70,4 @@ class Evaluator:
         print('  Successes: ', sum(results[eval_name]), '/', len(results), '=', 
               round(sum(results[eval_name]) / len(results), 4) * 100, '%')
         
-        print(t[['match_question', 'sim_question']])
-
         return results

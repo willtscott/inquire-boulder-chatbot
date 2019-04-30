@@ -46,12 +46,10 @@ class W2V(Evaluator):
         #Build the model, by selecting the parameters. 
         self.model = Word2Vec(self.clean_corpus, size=300, window=5, min_count=1, workers=4)
         #Save the model
-        self.model.save("../models/tempmodel.w2v")
-        #Inspect the model by looking for the most similar words for a test word. 
-        [print(x) for x in self.model.wv.most_similar('dogs', topn=5)]
-
-        self.vectors = self.embedding_feats(self.clean_corpus)
-
+#         self.model.save("../models/tempmodel.w2v")
+        
+        return self.embedding_feats(self.clean_corpus)
+        
     def max_similarity(self, query):
         """Returns (index, similarity value) of string argument q's most similar match in FAQ, determined by cosine similarity."""
         q = [self.w2v_text_process(query)]
@@ -61,7 +59,7 @@ class W2V(Evaluator):
 
         max_s = sims.max()
         max_i = np.argmax(sims)
-
+        
         return max_i, max_s 
 
 

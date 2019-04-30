@@ -116,11 +116,11 @@ Day 2
         docker run --rm -p 8080:8080 willtscott/inquire-boulder-bot:v1
         ---deploy---
         gcloud config set compute/zone us-central1-b
-        gcloud container clusters create bot-cluster --num-nodes=2
+        gcloud container clusters create bot-cluster --num-nodes=1
         kubectl run bot-web --image=willtscott/inquire-boulder-bot:v1 --port 8080
         kubectl expose deployment bot-web --type=LoadBalancer --port 80 --target-port 8080
         kubectl get service
-        *update webhook URL in Dialogflow Fulfilment section + '/dialog'
+        echo "***Update webhook URL in Dialogflow Fulfilment section with: URL + '/dialog'"
         ---deploy new version---
         docker build -t willtscott/inquire-boulder-bot:v2 .
         docker push willtscott/inquire-boulder-bot:v2
@@ -348,4 +348,26 @@ Day 5
 
 # Week 16
 Day 1
+* Fixed W2V auto-evaluation
+* Added KDTree auto-evaluation
+Day 2
+* Dialogflow console: Convert each qna pair to intent? (not working on Google's end....)
+* Watson research
+* Watson class mentoring
+* CfB Brigade meetup - mixer with civic data folks next week?
+Day 3
+* ACRONAME meeting
+* BIC job fair
+Day 4
+* Applications, connections
+* Python practice
+* H20.ai/Oracle Data Cloud presentation
+Day 5
+* Python practice
+* ACRONAME interview
+* $189.06 credit and 238 days remaining on GCP
 
+# Week 17
+Day 1
+* Created build and deployment scripts for Docker-GCP (in week16 branch)
+* Added basic functionality to submit service requests when relevant (in week16 branch)
