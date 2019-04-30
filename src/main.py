@@ -22,7 +22,4 @@ if __name__ == '__main__':
     """Default Python entrypoint creates Botserver object and runs Flask app."""
     bot = BotServer('data/faq-text-separated.csv')
     
-#   This is used when running locally only. When deploying to Google App
-#   Engine, a webserver process such as Gunicorn will serve the app. This
-#   can be configured by adding an `entrypoint` to .yaml file.
     app.run(host='0.0.0.0', port=8080, debug = False)
