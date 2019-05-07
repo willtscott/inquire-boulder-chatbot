@@ -1,6 +1,7 @@
 inquire-boulder-chatbot
 ==============================
 A chatbot for the Inquire Boulder FAQ<br>
+Interactive Web Demo at the link below:<br>
 https://willtscott.github.io/inquire-boulder-chatbot/
 
 Keywords: Python, scikit-learn, NLTK, spaCy, GenSim, Doc2Vec, Flask, Docker, Google Cloud Products, Dialogflow
