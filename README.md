@@ -3,15 +3,6 @@ inquire-boulder-chatbot
 A chatbot for the Inquire Boulder FAQ<br>
 https://willtscott.github.io/inquire-boulder-chatbot/
 
-
-<iframe
-    allow="microphone;"
-    width="500"
-    height="430"
-    style="padding: 50px;"
-    src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq">
-</iframe>
-
 Keywords: Python, scikit-learn, NLTK, spaCy, GenSim, Doc2Vec, Flask, Docker, Google Cloud Products, Dialogflow
 
 This project is written in Python using Jupyter Notebooks for exploration and prototyping and Flask and Docker for deployment on Google Cloud Products. I used NLTK and spaCy for NLP (including tokenizing and lemmatization) and scikit-learn for vectorization and similarity matching with Bag-of-Words (BOW), Term Frequency-Inverse Document Frequency (TFIDF), and cosine similarity. The Flask app uses the Dialogflow API to connect with a Dialogflow agent via webhooks, which provides the public interface.
@@ -31,7 +22,7 @@ https://user.govoutreach.com/boulder/faq.php
 Boulder Open Data Portal:<br>
 https://bouldercolorado.gov/open-data/areas-of-inquiry
 
-Related Project:<br>
+Related Project by Doster Esh:<br>
 https://github.com/doc1000/email_sorting
 
 
@@ -41,7 +32,7 @@ Project Organization
 ------------
 
     ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
+    ├── Makefile           <- Makefile with commands like `make data`
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
     │   ├── test           <- Handmade dataset for testing accuracy.
@@ -51,9 +42,7 @@ Project Organization
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
@@ -64,19 +53,18 @@ Project Organization
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
     │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
+    |   ├── evaluation     <- Scripts to automated model evaluation
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
     │   │   ├── predict_model.py
     │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
+    |   |
+    |   ├── planning       <- Project goals and journal
+    |   |
+    |   ├── lib            <- External tools library
     │
     └── test_environment.py <- tests correct version of python
-
 
 --------
 
