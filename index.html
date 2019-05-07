@@ -8,6 +8,23 @@
       grid-template-columns: fit-content(400px) fit-content(400px);
       grid-gap: 5px;
     }
+    
+    #bot{
+      background: #a5d87b; 
+      color: white; 
+      border-radius: 1em; 
+      width: 100px; 
+      font-size: 1.2em;
+      text-align: right;
+    }
+    
+    #user{
+      background: #e0e0e0; 
+      color: white; 
+      border-radius: 1em; 
+      width: 100px; 
+      font-size: 1.2em
+    }
   </style>
 </head>
 <body>
@@ -23,18 +40,18 @@
     </div>
     
     <div style="padding: 10px;">
-      <p style="background: #a5d87b; color: white; border-radius: 1em; width: 100px; size: 1.2em">
+      <p id="bot">
         &emsp;Try me!&emsp;
       </p>
       
-      <p>
-        Ask me about services provided by the City of Boulder, CO. If you're not sure where to start, try:         
-        <p style="background: #e0e0e0; color: white; border-radius: 1em; width: 100px; size: 1.2em">
-          &emsp;Why do dogs bark?&emsp;
-        </p>
-        
-        
+      <p id="bot">
+        Ask me about services provided by the City of Boulder, CO. If you're not sure where to start, try:              
       </p>
+      
+      <p id="user">
+        &emsp;Why do dogs bark?&emsp;
+      </p>
+      
     </div>
   </div>
   
