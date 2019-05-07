@@ -2,21 +2,28 @@
 <HTML lang="en">
 <head>
   <meta charset="UTF-8">
+  <style>
+    #container{
+      display: grid;
+      grid-template-columns: fit-content(400px) fit-content(100px);
+      grid-gap: 5px;
+    }
+  </style>
 </head>
 <body>
   <h1>
     Inquire Boulder FAQ Chatbot
-  </h1>
-  
-  <p style="background: #8ca0ff; color: white; border-radius: 1em; grid-template-columns: fit-content(100px);" >
-    Try me!
-  </p>
-  
-  <p>
-    <iframe allow="microphone;" width="375" height="500" style="padding: 10px;" 
-    src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq"> 
-    </iframe>
-  </p>
+  </h1>  
+  <div id="container">
+    <div>
+      <iframe allow="microphone;" width="375" height="500" style="padding: 10px;" 
+      src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq"> 
+      </iframe>
+    </div>
+    <div style="background: #8ca0ff; color: white; border-radius: 1em; grid-template-columns: fit-content(100px);">
+      Try me!
+    </div>
+  </div>
   
   <a href="https://github.com/willtscott/inquire-boulder-chatbot">
     GitHub Project
