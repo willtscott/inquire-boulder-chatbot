@@ -5,7 +5,7 @@
   <style>
     #container{
       display: grid;
-      grid-template-columns: fit-content(400px) fit-content(100px);
+      grid-template-columns: fit-content(400px) fit-content(400px);
       grid-gap: 5px;
     }
   </style>
@@ -14,14 +14,20 @@
   <h1>
     Inquire Boulder FAQ Chatbot
   </h1>  
+  
+  <div style="background: #8ca0ff; color: white; border-radius: 1em; grid-template-columns: fit-content(100px);">
+    &emsp;Try me!&emsp;
+  </div>
+  
   <div id="container">
     <div>
       <iframe allow="microphone;" width="375" height="500" style="padding: 10px;" 
       src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq"> 
       </iframe>
     </div>
-    <div style="background: #8ca0ff; color: white; border-radius: 1em; grid-template-columns: fit-content(100px);">
-      &emsp;Try me!&emsp;
+    
+    <div>
+      Ask me about services provided by the City of Boulder, CO. If you're not sure where to start, try: "Why do dogs bark?"
     </div>
   </div>
   
