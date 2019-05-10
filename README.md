@@ -38,6 +38,8 @@ Project Organization
     │   ├── processed      <- The final, ca nonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     |
+    ├── evaluation         <- Scripts to automated model evaluation
+    |
     ├── index.html         <- Github.io project page 
     |
     ├── lib                <- External tools library
@@ -57,8 +59,6 @@ Project Organization
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
     │   │
-    |   ├── evaluation     <- Scripts to automated model evaluation
-    │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │       │                 predictions
     │       ├── predict_model.py
@@ -68,4 +68,5 @@ Project Organization
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+Project based on the cookiecutter data science project template.
+https://drivendata.github.io/cookiecutter-data-science/
