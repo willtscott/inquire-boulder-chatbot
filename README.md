@@ -9,10 +9,10 @@ This project is written in Python using Jupyter Notebooks for exploration and pr
 
 The goal is to provide a working, better-than-baseline chatbot that is publicly accessible and can be flexibly scaled up and/or iterated with different datasets.
 
-The text dataset for the FAQ was obtained from a webmaster at the City of Boulder. Thanks goes to Nicolia Eldred-Skemp for help acquiring this data. 
+The process is explained in further detail by my article:
+https://towardsdatascience.com/faq-chatbot-mvp-871ab7db94cc
 
-The process is explained in further detail by my blog post here:
-https://medium.com/p/faq-chatbot-mvp-871ab7db94cc?source=email-566e6f2dac22--writer.postDistributed&sk=a5f7b76973a08ca2ee44d5ac09aaf8e8
+The text dataset for the FAQ was obtained from a webmaster at the City of Boulder. Thanks goes to Nicolia Eldred-Skemp for help acquiring this data. 
 
 Other Links:<br>
 
@@ -26,8 +26,6 @@ Related Project by Doster Esh:<br>
 https://github.com/doc1000/email_sorting
 
 
-
-
 Project Organization
 ------------
 
@@ -39,10 +37,18 @@ Project Organization
     │   ├── interim        <- Intermediate data that has been transformed.
     │   ├── processed      <- The final, ca nonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
+    |
+    ├── evaluation         <- Scripts to automated model evaluation
+    |
+    ├── index.html         <- Github.io project page 
+    |
+    ├── lib                <- External tools library
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
     ├── notebooks          <- Jupyter notebooks
+    |   
+    ├── planning           <- Project goals and journal
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
@@ -53,19 +59,14 @@ Project Organization
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
     │   │
-    |   ├── evaluation     <- Scripts to automated model evaluation
-    │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    |   |
-    |   ├── planning       <- Project goals and journal
-    |   |
-    |   ├── lib            <- External tools library
+    │       │                 predictions
+    │       ├── predict_model.py
+    │       └── train_model.py
     │
     └── test_environment.py <- tests correct version of python
 
 --------
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+Project based on the cookiecutter data science project template.
+https://drivendata.github.io/cookiecutter-data-science/
