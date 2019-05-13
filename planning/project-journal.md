@@ -371,3 +371,13 @@ Day 5
 Day 1
 * Created build and deployment scripts for Docker-GCP (in week16 branch)
 * Added basic functionality to submit service requests when relevant (in week16 branch)
+
+# Week 18
+Day 1
+* Explored Dialogflow Console options - nothing conclusive determined. Unhelpful response 
+  from support request.
+
+# Week 19
+Day 1
+* Updated build and deployment scripts
+* Linted src/ with flake8
