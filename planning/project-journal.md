@@ -365,7 +365,7 @@ Day 4
 Day 5
 * Python practice
 * ACRONAME interview
-* $189.06 credit and 238 days remaining on GCP
+* $189.06 credit and 238 days remaining on GCP. Loss of $22.64 in 15 days = $1.51/day
 
 # Week 17
 Day 1
@@ -381,3 +381,7 @@ Day 1
 Day 1
 * Updated build and deployment scripts
 * Linted src/ with flake8
+
+# Week 20
+Day 1
+* 
