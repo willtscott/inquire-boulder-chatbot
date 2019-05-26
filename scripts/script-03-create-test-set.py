@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# Create datafram for testing model accuracy.
+
 import pandas as pd
 
 test = pd.DataFrame([
