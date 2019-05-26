@@ -72,15 +72,18 @@ class BotServer:
         print the locally-determined Dialogflow API intent, and return a json
         response based on sklearn matching within the FAQ.
         """
+        
+        # Handle webhook request
         if request.is_json:
             req = request.get_json(force=True)
             message = req.get('queryResult').get('queryText')
+        # Handle local request
         else:
             message = request.form['message']
 
         response_text = self.match_query(message)
 
-        # Return json file as webhook response or render html template locally
+        # Return json file as webhook response 
         if request.is_json:
             return jsonify({
                 "fulfillmentText": response_text,
@@ -91,5 +94,6 @@ class BotServer:
                 }],
                 "source": "<Text response>"
                 })
+        # Or render html template locally
         else:
             return render_template('index.html', query=message, answer=response_text)
