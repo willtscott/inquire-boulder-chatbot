@@ -315,7 +315,7 @@ Day 4
 Day 5
 * Python practice
 * ACRONAME interview
-* $189.06 credit and 238 days remaining on GCP
+* $189.06 credit and 238 days remaining on GCP. Loss of $22.64 in 15 days = $1.51/day
 
 # Week 17
 Day 1
@@ -355,4 +355,4 @@ Day 3
 * Google Cloud Run could be a simpler and cheaper way to run this service
 Day 4
 * AUTHENTICATION SOLVED - Putting version numbers into requirements.txt caused docker build to fail quietly, therefore build was never pushed to registry and previous (broken) version of tag was deployed. Removed version numbers from requirements.txt file.
-* 
+
