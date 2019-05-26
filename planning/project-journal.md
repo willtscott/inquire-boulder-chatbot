@@ -355,4 +355,12 @@ Day 3
 * Google Cloud Run could be a simpler and cheaper way to run this service
 Day 4
 * AUTHENTICATION SOLVED - Putting version numbers into requirements.txt caused docker build to fail quietly, therefore build was never pushed to registry and previous (broken) version of tag was deployed. Removed version numbers from requirements.txt file.
-* 
+* Deployed new version (tag v4) to GCP with deploy-update script and checked new 'service request' response.'
+
+# Week 21
+# POS in Production
+
+** TODO: 
+* Update deployment with POS lemmatization
+* Update testset to enable evaluating on topic matching
+* Tryout: Send 'service reqest' prompt as separate response
