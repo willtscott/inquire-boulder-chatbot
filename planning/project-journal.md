@@ -178,6 +178,7 @@ Day 4
 Day 5
 * Worked on resume
 * Replied to Gordon's email - asked for feedback on application. 
+
 # Week 9
 ## Applying, Interview Prep, Blog Post
 Day 1
@@ -197,56 +198,31 @@ Day 4
 * Worked on blog post.
 Day 5
 * Finished up blog draft.
+
 # Week 10
 ## Blog Post, Interview Prep
 Day 1
 * Submitted blog post to Towards Data Science after adding pics and conclusion paragraph
-* Received resume advice from Ronnie
 Day 2
 * Blog post published by TDS!
 * Readme summary
 Day 3
-* Received email from Prodigy Games and scheduled call for 2:15 the next day.
 * Did Python and SQL practice
 * Redeployed bot on GCP to try to provide better responses to people checking it out through the blog post.
 Day 4
 * Python and SQL practice
-* Interview prep
-* Phone interview with Prodigy Games - OK, I think. Waiting on coding challenge.
 * Bot used ~$3 over 24hrs with a few queries from randos
 Day 5
-* Practiced SQL
-* Took Prodigy coding challenge 
 * Bot used about $3 more today
 * Realized that hand-cleaned dataset needs to be updated in Dialogflow KnowledgeBase as well
 
 # Week 11
-Day 1
-* Applied Sphero and Penlink
 Day 2
 * Cleaning up sandbox and creating testing pipeline
 Day 3
 * Adding more testing to sandbox for mulitnomial naive-bayes - SmartRegs questions mishandled in dataset are breaking this.
-* Drafted cover letter for Simple Energy:
-    - Find Hiring Manager to address letter
-* Application ToDo list:
-    + Find advice on cold-contacting current employees
-    + / at end of URL on resume/letter?
-    - New photo on LinkedIn
-    - Links to Kaggle, Medium profiles, travelblog?
-    - Spiffy up github.io homepage 
-    - https://danielhunter.io/technical/2018/06/18/hired/
-* Applied Simple Energy position Software Engineer - Data
-Day 4
-* Cold-contacted a few folks
-* Received response from Simple Energy
-* Job-searched for Boulder area
-* 1 hr SQL
-* Added networking events/meetups
 Day 5
 * Seems that GCP services are costing a steady $3/day, that's about $1100/year.
-* Applied at Carbon Black
-* 1 hr SQL - finished SQLZOO tutorial
 * Worked on bot accuracy: detect_intent function is failing due to authentication reasons. Eject API?
 
 # Week 12
@@ -257,58 +233,32 @@ Day 1
     Feedback from Prodigy? none
     cold-contact senior members? both
     Perhaps use averaged Word2Vec instead of TFIDF for chatbot...
-* Updated resume, post-roast
-* Applied to Voyant, cold-contacted 2 employees.
-* Worked on BVSD application
-Day 2
-* Cancelled lunch meeting w/ Penlink
-* Response from Voyant - meeting this week?
-* Received feedback from Beula at Prodigy - did great on coding challenge, but going with more experienced candidate. Keeping in touch.
-* 1 hr Python practice
 Day 3
-* Worked on BVSD application
 * Determined that Dialogflow API can indeed be eliminated currently
 Day 4
 * Finished hand-cleaning dataset up to entry 251 (end), although it is far from perfect for chatbot application.
-Day 5
-* Submitted BVSD application
-* Meeting w/ JJ of Voyant
 Day 6
 * Redefined q-n-a pair separation function and used new results to find errors in dataset, so revisited hand-cleaning.
 
 # Week 13
 Day 1
 * Attended Databricks Unified Analytics workshop - Takeaway: Faster/Better than plain Spark w/ tools to bring engineering and ML together.
-* Contacted WilderAI
 * Updated test set with stripped strings and started experimenting with ngrams in CountVectorizer
-Day 2
-* Meeting with PenLink, Data Detectives folks, and Analyze Boulder 
-* Job search and networking
 Day 3
 * Updating text processing notebooks into script sequence
-* Job search and networking followup to previous day's contacts
 Day 4
-* Follow-up with Carbon Black and Voyant
 * Continued updating of script sequence from processing notebook
 * GCP credit: $222.40 with 258 days remaining. Loss of $26 in last 10 days = $2.60/day
 * Successfully redeployed new version of bot, minus Dialogflow API, with new commands. Reset service running on one cluster.
-* Applied to IBM 
-Day 5
-* Attended BVSD job fair
 
 # Week 14 
 Day 1
 * Office Hours w/ SM
-* Call with Voyant, interview tomorrow!
 * Testing out IBM Watson integration - interface not friendly, but seems pretty powerful already.
-* Reached out to new IBM contact, JJ
 * GCP credit: $216.27 with 255 days remaining, averaging $6 over 3 days = $2/day = cheaper without Dialogflow API!?
 Day 2
 * Met with AC from Onehot Labs
-* Mock interview with AT from SM
-* Interview with Voyant - OK!?
 * Downloaded Word2Vec model pretrained on Google News
-* Boulder Python meetup about Spline models
 Day 3
 * Attended CWA talk about Effects of AI on Business and Labor
 * Attempted to run pretrained Word2Vec - model loading took 1hr17min...........
@@ -381,3 +331,28 @@ Day 1
 Day 1
 * Updated build and deployment scripts
 * Linted src/ with flake8
+
+# Week 20
+Day 1
+* Updated index.html page with added info
+* Used build script to push new container version (v3 = 554MB, 50MB larger than v2, same size as v1)
+* On GCP: $151.16 credit and 213 days remaining, $1.50/day
+* Created bucket for cloud scripts on Google cloud storage and copied them to Cloud shell
+* Attempted to update deployment with new version - no change? 
+* TODO: Try taking down current version, putting it back up, and then updating with new version.
+Day 2
+* Took down current version, put up new version. Fixed a few errors in scripts along the way. 
+* Service not actually running: Container doesn't seem to be active! 
+* TO TRY: Rebuild/deploy with GCP container registry - This doesn't seem necessary but could be beneficial. 
+    docker build -t gcr.io/${PROJECT_ID}/hello-app:v1 .
+    gcloud auth configure-docker
+    docker push gcr.io/${PROJECT_ID}/hello-app:v1
+    kubectl run hello-web --image=gcr.io/${PROJECT_ID}/hello-app:v1 --port 8080
+* Bot service v3 returning auth error: Try adding diaglogflow back in (requirements and import)
+Day 3
+* Looked into v3 auth issues: Dialogflow was being imported - possible cause?
+* Linted scripts and evaluation dirs
+* Google Cloud Run could be a simpler and cheaper way to run this service
+Day 4
+* AUTHENTICATION SOLVED - Putting version numbers into requirements.txt caused docker build to fail quietly, therefore build was never pushed to registry and previous (broken) version of tag was deployed. Removed version numbers from requirements.txt file.
+* 

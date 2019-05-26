@@ -16,7 +16,7 @@ RUN python -m nltk.downloader wordnet
 ENV FLASK_APP=main.py
 ENV FLASK_ENV=development
 ENV DIALOGFLOW_PROJECT_ID=inquire-boulder-faq
-ENV GOOGLE_APPLICATION_CREDENTIALS=Inquire-Boulder-FAQ-8ed88c62ebc8.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=Inquire-Boulder-FAQ-ae45af8ac36a.json
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
