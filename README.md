@@ -5,7 +5,7 @@ Interactive Web Demo: https://willtscott.github.io/inquire-boulder-chatbot/
 
 Keywords: Python, scikit-learn, NLTK, spaCy, GenSim, Doc2Vec, Flask, Docker, Google Cloud Products, Dialogflow
 
-This project is written in Python using Jupyter Notebooks for exploration and prototyping and Flask and Docker for deployment on Google Cloud Products. I used NLTK and spaCy for NLP (including tokenizing and lemmatization) and scikit-learn for vectorization and similarity matching with Bag-of-Words (BOW), Term Frequency-Inverse Document Frequency (TFIDF), and cosine similarity. The Flask app uses the Dialogflow API to connect with a Dialogflow agent via webhooks, which provides the public interface.
+This project is written in Python using Jupyter Notebooks for exploration and prototyping and Flask and Docker for deployment on Google Cloud Products. I used NLTK and spaCy for NLP (including tokenizing and lemmatization) and scikit-learn for vectorization and similarity matching with Bag-of-Words (BOW), Term Frequency-Inverse Document Frequency (TFIDF), and cosine similarity. The cloud service connects with a Dialogflow agent via webhooks, which provides the public interface.
 
 The goal is to provide a working, better-than-baseline chatbot that is publicly accessible and can be flexibly scaled up and/or iterated with different datasets.
 
