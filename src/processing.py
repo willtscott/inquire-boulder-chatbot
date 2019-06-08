@@ -12,7 +12,7 @@ def lem(words):
     return lem_sentence
 
 
-def text_process(mess):
+def text_process(mess, lemmas=True):
     """
     Returns list of tokenized lemmas in argument string mess, with stopwords,
     punctuation removed.
@@ -21,5 +21,8 @@ def text_process(mess):
     clean = ''.join(clean)
     clean = [word.lower() for word in clean.split() if word.lower()
              not in stop_words.ENGLISH_STOP_WORDS]
-    clean = lem(clean)
+    
+    if lemmas:
+        clean = lem(clean)
+        
     return clean

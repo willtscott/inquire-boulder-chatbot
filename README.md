@@ -1,5 +1,7 @@
 inquire-boulder-chatbot
 ==============================
+![Wordcloud](vizualization/logo_cloud.png "FAQ Wordcloud")
+
 A chatbot for the Inquire Boulder FAQ<br>
 Interactive Web Demo: https://willtscott.github.io/inquire-boulder-chatbot/
 
@@ -38,7 +40,7 @@ Project Organization
     │   ├── processed      <- The final, ca nonical data sets for modeling.
     │   └── raw            <- The original, immutable data dump.
     |
-    ├── evaluation         <- Scripts to automated model evaluation
+    ├── evaluation         <- Scripts to automate model evaluation
     |
     ├── index.html         <- Github.io project page 
     |
@@ -46,7 +48,7 @@ Project Organization
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
     │
-    ├── notebooks          <- Jupyter notebooks
+    ├── notebooks          <- Jupyter notebooks for EDA and prototyping
     |   
     ├── planning           <- Project goals and journal
     │
@@ -57,16 +59,15 @@ Project Organization
     │   ├── __init__.py    <- Makes src a Python module
     │   │
     │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │       │                 predictions
-    │       ├── predict_model.py
-    │       └── train_model.py
+    │
+    ├── scripts            <- Scripts to automate text cleaning and test set creation
+    │   ├── deployment     <- Scripts for containerization and cloud deployment   
+    │    
+    ├── vizualization       <- Images for EDA and masks to generate images
     │
     └── test_environment.py <- tests correct version of python
 
 --------
 
-Project based on the cookiecutter data science project template.
+Project organization based on the cookiecutter data science project template.
 https://drivendata.github.io/cookiecutter-data-science/

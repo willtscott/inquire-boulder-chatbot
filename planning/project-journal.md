@@ -358,10 +358,22 @@ Day 4
 * Deployed new version (tag v4) to GCP with deploy-update script and checked new 'service request' response.'
 
 # Week 21
+# Vizualization Update
+
+Day 1
+* $142.25 credit and 206 days remaining = $1.27 / day
+Day 2
+* Add wordcloud vizualization to EDA notebook and github.io site.
+Day 3
+* Add masks and images to new vizualiztion folder.
+* Add optionality to lemmas in processing lib
+* Modified index.html
+* Modified README.md
+
+# Week 22
 # POS in Production
 
 ** TODO: 
 * Update deployment with POS lemmatization
 * Update testset to enable evaluating on topic matching
-* Tryout: Send 'service reqest' prompt as separate response
-
+* Tryout: Send 'service request' prompt as separate response
