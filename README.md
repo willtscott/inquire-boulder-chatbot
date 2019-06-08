@@ -1,7 +1,5 @@
 inquire-boulder-chatbot
 ==============================
-![Wordcloud](vizualization/logo_cloud.png "FAQ Wordcloud")
-
 A chatbot for the Inquire Boulder FAQ<br>
 Interactive Web Demo: https://willtscott.github.io/inquire-boulder-chatbot/
 
