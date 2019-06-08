@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <style>
+    body{
+      font-family: Tahoma, Geneva, sans-serif;
+    }
+     
     #container{
       display: grid;
-      grid-template-columns: fit-content(400px) fit-content(400px);
+      grid-template-columns: fit-content(400px) fit-content(400px) fit-content(400px);
       grid-gap: 5px;
     }
     
@@ -27,21 +31,30 @@
       padding: 10px;
       font-size: 1.2em
     }
+
+    .column{
+      padding: 20px;
+    }
+      
+    .vertical-center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }      
+      
   </style>
 </head>
 <body>
-  <h1>
+  <h1 align="center">
     Inquire Boulder FAQ Chatbot
   </h1>  
   
-  <div id="container">
-    <div>
-      <iframe allow="microphone;" width="375" height="500" style="padding: 10px;" 
-      src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq"> 
-      </iframe>
-    </div>
+  <br>
     
-    <div style="padding: 10px;">
+  <div id="container">
+    <div class="column">
       <p id="bot">
         &emsp;Try me!&emsp;
       </p>
@@ -59,9 +72,19 @@
       </p>
       
     </div>
+      
+    <div>
+      <iframe allow="microphone;" width="375" height="500" class="column" 
+      src="https://console.dialogflow.com/api-client/demo/embedded/inquire-boulder-faq"> 
+      </iframe>
+    </div>
+    
+    <div class="column">
+      <img class="vertical-center" src="vizualization/logo_cloud_color.png" alt="Word Cloud" height="400" width="400">
+    </div>    
   </div>
   
-  <p>
+  <p align="center">
     <a href="https://github.com/willtscott/inquire-boulder-chatbot">
       GitHub Project
     </a>

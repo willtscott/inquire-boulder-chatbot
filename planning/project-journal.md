@@ -365,3 +365,5 @@ Day 4
 * Update testset to enable evaluating on topic matching
 * Tryout: Send 'service reqest' prompt as separate response
 
+Day 1
+* $142.25 credit and 206 days remaining = $1.27 / day
