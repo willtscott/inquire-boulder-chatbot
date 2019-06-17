@@ -9,58 +9,64 @@
      
     #container{
       display: grid;
-      grid-template-columns: fit-content(400px) fit-content(400px) fit-content(400px);
-      grid-gap: 5px;
+      grid-template-columns: fit-content(33vw) fit-content(33vw) fit-content(33vw);
+      grid-gap: 1em;
     }
     
-    #bot{
-      background: #A1D080; 
-      color: white;
-      font-family: Tahoma, Geneva, sans-serif;
-      border-radius: .5em;
-      padding: 10px;
-      font-size: 1.2em;
-      text-align: right;
-    }
-    
-    #user{
-      background: #EFEFEF; 
-      color: black; 
-      font-family: Tahoma, Geneva, sans-serif;
-      border-radius: .5em;
-      padding: 10px;
-      font-size: 1.2em
+    .column{
+      padding: 1em;
+    }   
+
+    .box{
+        width: 100%;
+        margin: auto;
     }
 
-    .column{
-      padding: 20px;
-    }   
-      
+    .chat{
+        width: 90%;
+        padding: 1em;
+        border-radius: .5em;
+        font-size: 1.2em;
+    }
+
+    .user{
+        background: #EFEFEF; 
+        color: black; 
+        text-align: left;
+    }
+
+    .bot{
+/*         margin-left: 5%; */
+        text-align: right;
+        background: #A1D080; 
+        color: white;
+        font-size: 1.2em;
+    }
   </style>
 </head>
 <body>
   <h1 align="center">
-    Inquire Boulder FAQ Chatbot
+    Inquire Boulder FAQ Assistant
   </h1>  
   
   <br>
     
   <div id="container">
     <div class="column">
-      <p id="bot">
+      <p class="chat bot">
         &emsp;Try me!&emsp;
       </p>
         
-      <p id="bot">
-        Greetings and small talk are momentarily disabled, so I'll just say 'Hello!' here and get on to your questions.
+      <p class="chat bot">
+        Greetings and small talk are momentarily disabled, so I'll just say 'Hello!' here and get on to answering your questions.
       </p>
       
-      <p id="bot">
+      <p class="chat bot">
         Ask me about services provided by the City of Boulder, CO. If you're not sure where to start, try:              
       </p>
       
-      <p id="user">
-        &emsp;Why do dogs bark?&emsp;
+      <p class="chat user">
+        How do I call Open Space Mountain Parks service?
       </p>
       
     </div>

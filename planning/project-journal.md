@@ -358,7 +358,7 @@ Day 4
 * Deployed new version (tag v4) to GCP with deploy-update script and checked new 'service request' response.'
 
 # Week 21
-# Vizualization Update
+## Vizualization Update
 
 Day 1
 * $142.25 credit and 206 days remaining = $1.27 / day
@@ -371,7 +371,20 @@ Day 3
 * Modified README.md
 
 # Week 22
-# POS in Production
+## Website Beautification
+
+Day 1
+* Updated index.html to remove vertical centering on wordcloud, which didn't render well on mobile. Should design site to be mobile-friendly in the future. 
+Day 2
+* Added version number to ReST interface src.index.html
+* Updated src/index.html to beautify and match styling of github.io landing page
+* Rebranded 'Chatbot' as 'Assistant' on websites.
+Day 3
+* $109.09 and 186 days remaining = $1.66 / day - Perhaps due to higher traffic on the site recently?
+* Updated deployment with v0.4.1 
+
+# Week 23
+## POS in Production
 
 ** TODO: 
 * Update deployment with POS lemmatization

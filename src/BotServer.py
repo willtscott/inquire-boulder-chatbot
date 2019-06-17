@@ -69,8 +69,8 @@ class BotServer:
     def bot_dialog(self, request):
         """
         Given the argument POST request, parse it according to json or form data,
-        print the locally-determined Dialogflow API intent, and return a json
-        response based on sklearn matching within the FAQ.
+        and return a json response or html template based on sklearn matching
+        within the FAQ.
         """
         
         # Handle webhook request

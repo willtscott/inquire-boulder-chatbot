@@ -1,18 +1,69 @@
 <!doctype html>
 
-<html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            body{
+                font-family: Tahoma, Geneva, sans-serif;
+            }
+            
+            .box{
+                width: 70vw;
+                margin: auto;
+            }
+            
+            .chat{
+                width: 60vw;
+                padding: 2em;
+                border-radius: .5em;
+                font-size: 1.2em;
+            }
+            
+            .user{
+                text-align: left;
+                background: #EFEFEF; 
+                color: black; 
+            }
+            
+            .bot{
+                margin-left: 5vw;
+                text-align: right;
+                background: #A1D080; 
+                color: white;
+            }
+        </style>
+
+    </head>
     <body>
-        <p align='left'>
-            <h3>User</h3>        
-            <form action = "/dialog" method = "post">
-                <input type = "text" name = "message" value = ""/>
-                <input type = "submit" value = "submit" />
-            </form>
-            {{ query }}
+        <h1 align="center">
+            Inquire Boulder FAQ Assistant
+        </h1>
+        <p align="center">
+            This is the direct interface to the ReST service.
         </p>
-        <p align='left'>
-            <h3 align='left'>Bot</h3>
+        
+        <div class="box">
+        <div class="chat user">
+            <h4>User</h4>       
+            {{ query }}
+            <br><br>
+            <form action = "/dialog" method = "post">
+                <input type = "submit" value = "SEND"/>
+                <input type = "text" name = "message" value = ""/>
+            </form>
+        </div>
+        </div>
+        
+        <br>
+        
+        <div class="box">
+        <div class="chat bot">
+            <h4>Assistant</h4>
             {{ answer }}
-        </p>    
+        </div>    
+        </div>
+
+        <p align="center" style="padding:20px;">v0.4.1</p>
     </body>
 </html>
